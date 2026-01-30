@@ -167,6 +167,16 @@
             object-fit: contain;
             object-position: center top;
         }
+        section.video-section .pv-frame-image {
+            width: 100%;
+            background-image: url(assets/image/PVFrame.png);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 400px;
+            display: block;
+            z-index: 0;
+        }
         section.video-section .video-section-inner {
             position: relative;
             z-index: 2;
@@ -190,10 +200,15 @@
             overflow: hidden;
             background: #0f172a;
         }
-        section.video-section .video-placeholder img {
+        section.video-section .video-placeholder div {
             width: 100%;
-            height: auto;
+            background-image: url(assets/image/gameScreen.jpg);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 200px;
             display: block;
+            z-index: 0;
         }
         section.video-section .play-overlay {
             position: absolute;
@@ -465,14 +480,14 @@
     <!-- PV Section: ゴールド枠（PVを見る） -->
     <section class="video-section">
         <figure class="bg">
-            <img src="assets/image/PVFrame.png" alt="">
+            <div class="pv-frame-image" alt=""></div>
         </figure>
         <div class="video-section-inner">
             <div class="btn-wrap">
                 <a href="#" class="btn-orange">PVを見る</a>
             </div>
             <div class="video-placeholder">
-                <img src="assets/image/gameScreen.jpg" alt="PVサムネイル">
+                <div class="video-placeholder-image" alt="PVサムネイル"></div>
                 <div class="play-overlay">
                     <img src="assets/image/play_circle.svg" alt="再生">
                 </div>
