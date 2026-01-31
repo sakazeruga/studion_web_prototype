@@ -1,0 +1,448 @@
+/* Design system: Figma 366-269 準拠（カラーコード厳守） */
+:root {
+    --color-header-bg: #ffffff;
+    --color-header-text: #333333;
+    --color-primary: #FF6600;
+    --color-primary-light: #FF8533;
+    --color-primary-red: #FF4500;
+    --color-section-dark: #0f172a;
+    --color-footer-bg: #93c5fd;
+    --color-footer-deep: #4169E1;
+    --color-app-btn: #333333;
+    --color-light-blue: #ADD8E6;
+    --color-blue: #4169E1;
+    --color-gold: #D4AF37;
+    --color-green: #00A86B;
+    --color-pink: #FFCCFF;
+    --radius-btn: 10px;
+    --padding-btn-y: 14px;
+    --padding-btn-x: 28px;
+    --space-section-y: 48px;
+    --space-section-x: 20px;
+    --space-block: 24px;
+    --space-inline: 12px;
+    --shadow-btn: 0 2px 4px rgba(0, 0, 0, 0.15);
+    --shadow-feature-header: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Hiragino Kaku Gothic Pro', 'Meiryo', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: url(../assets/image/bg.jpg) center top no-repeat;
+    background-size: cover;
+    background-attachment: scroll;
+}
+
+/* 共通: オレンジCTA（Figma 統一） */
+.btn-orange {
+    display: inline-block;
+    background: linear-gradient(180deg, var(--color-primary-light) 0%, var(--color-primary) 100%);
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+    padding: 14px 28px;
+    border-radius: 10px;
+    text-decoration: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+    border: none;
+    cursor: pointer;
+}
+.btn-orange:hover {
+    box-shadow: 0 6px 18px rgba(232, 93, 4, 0.45);
+}
+
+/* Header: 白背景（Figma 366-269） */
+header {
+    background: #ffffff;
+    padding: 14px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+header h1 {
+    position: relative;
+}
+header h1 a {
+    text-decoration: none;
+    color: inherit;
+}
+header h1 a img {
+    height: 36px;
+    width: auto;
+    display: block;
+}
+header > a {
+    position: relative;
+}
+header .menu-toggle img {
+    height: 24px;
+    width: 24px;
+    display: block;
+}
+
+/* 各h2: 半透明白帯 */
+h2 {
+    background: rgba(255, 255, 255, 0.5);
+    padding: 12px 16px;
+    border-radius: 6px;
+}
+/* Main Hero: フル幅・余白なしで Eyecatch を表示 */
+main {
+    position: relative;
+}
+main h2 {
+    position: relative;
+    margin: 0;
+    line-height: 0;
+    padding: 0;
+    background: transparent;
+}
+main h2 figure {
+    background: rgba(255, 255, 255, 0.5);
+    padding: 0;
+    border-radius: 6px;
+}
+main h2 figure {
+    margin: 0;
+}
+main h2 figure img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 4px;
+}
+
+/* Trailer: 中央CTA（背景は body の bg.jpg） */
+.trailer {
+    padding: 48px 20px 56px;
+    background: transparent;
+    text-align: center;
+}
+.trailer-cta {
+    margin: 0 0 24px 0;
+    text-align: center;
+}
+
+/* Section 共通（余白統一・背景は body の bg.jpg） */
+section {
+    position: relative;
+    padding: 48px 20px 56px;
+    background: transparent;
+}
+
+/* Video Section: PVを見る・ゴールド枠（PVFrame.png） */
+section.video-section {
+    padding: 32px 20px 48px;
+}
+section.video-section figure.bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    margin: 0;
+    pointer-events: none;
+}
+section.video-section figure.bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center top;
+}
+section.video-section .pv-frame-image {
+    width: 100%;
+    background-image: url(../assets/image/PVFrame.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 400px;
+    display: block;
+    z-index: 0;
+}
+section.video-section .video-section-inner {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+section.video-section .pv-label {
+    text-align: center;
+    color: #333333;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 12px;
+    padding: 8px 0;
+}
+section.video-section .video-placeholder {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #0f172a;
+}
+section.video-section .video-placeholder div {
+    width: 100%;
+    background-image: url(../assets/image/gameScreen.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 200px;
+    display: block;
+    z-index: 0;
+}
+section.video-section .play-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+}
+section.video-section .play-overlay img {
+    width: 80px;
+    height: 80px;
+    opacity: 0.95;
+}
+section.video-section .btn-wrap {
+    text-align: center;
+    margin-bottom: 24px;
+}
+section.video-section div.iframe-wrap {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    margin: 0 auto;
+}
+section.video-section div.iframe-wrap iframe {
+    width: 100%;
+    max-width: 900px;
+    height: 500px;
+    display: block;
+    margin: 0 auto;
+    border: 0;
+}
+
+/* Features Section: Features タイトル＋図（featuresBG.png） */
+.features {
+    background: transparent;
+    padding: 40px 20px 56px;
+}
+.features > h2 {
+    display: block;
+    overflow: visible;
+    margin-bottom: 24px;
+    text-align: center;
+    padding: 12px 16px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 6px;
+}
+.features > h2 img {
+    max-width: 320px;
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+.features ol {
+    list-style: none;
+    max-width: 900px;
+    margin: 0 auto;
+}
+/* 各機能: 縦積み・オレンジバナー風見出し＋画像（白カードなし） */
+.features ol > li {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 40px;
+    padding: 0;
+    background: transparent;
+    border-radius: 0;
+    box-shadow: none;
+    display: block;
+}
+.features ol > li:last-child {
+    margin-bottom: 0;
+}
+.features ol > li h2 {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 12px;
+    font-size: 17px;
+    line-height: 1.4;
+    color: #FF6600;
+    font-weight: bold;
+    text-shadow: 0 0 2px #fff, 0 1px 2px rgba(0,0,0,0.15);
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+.features ol > li h2 img {
+    height: 36px;
+    width: auto;
+    flex-shrink: 0;
+}
+.features ol > li > img {
+    width: 100%;
+    max-width: 560px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+.features ol > li ul {
+    list-style: disc;
+    padding-left: 24px;
+    margin-top: 16px;
+}
+.features ol > li ul li {
+    margin-bottom: 8px;
+    padding: 0;
+    background: none;
+    box-shadow: none;
+}
+
+/* Extra Section: 体験版をプレイ・指カーソルオーバーレイ */
+section.extra-section {
+    background: transparent;
+    padding: 40px 20px 56px;
+    text-align: center;
+}
+section.extra-section .extra-frame {
+    max-width: 900px;
+    margin: 0 auto 24px;
+}
+section.extra-section .extra-frame img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+section.extra-section .extra-cta {
+    margin: 0;
+    position: relative;
+    display: inline-block;
+}
+section.extra-section .extra-cta .finger-hint {
+    position: absolute;
+    right: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 36px;
+    height: 36px;
+    pointer-events: none;
+}
+
+/* Footer（背景は body の bg.jpg） */
+footer {
+    background: transparent;
+    color: #fff;
+    padding: 48px 20px 32px;
+}
+footer .footer-install {
+    text-align: center;
+    margin-bottom: 24px;
+    color: #FF6600;
+    font-weight: bold;
+    font-size: 17px;
+    text-shadow: 0 0 1px #fff, 0 1px 2px rgba(0,0,0,0.2);
+}
+footer .app-buttons {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+footer .app-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: #fff;
+    text-decoration: none;
+    padding: 14px 20px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 1.3;
+    min-width: 180px;
+}
+footer .app-btn img {
+    height: 28px;
+    width: auto;
+}
+footer .app-btn span {
+    display: block;
+    font-size: 12px;
+    font-weight: normal;
+    margin-top: 2px;
+}
+footer .footer-logo {
+    margin: 0 auto 24px;
+    text-align: center;
+}
+footer .footer-logo img {
+    max-width: 200px;
+    height: auto;
+}
+footer ul.footer-buttons {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+footer ul.footer-buttons li a {
+    color: #fff;
+    text-decoration: none;
+}
+/* フッターのオレンジボタン（お問い合わせ・メンバーへ登録） */
+footer .footer-buttons a {
+    display: inline-block;
+    background: linear-gradient(180deg, #FF8533 0%, #FF6600 100%);
+    color: #fff;
+    font-weight: bold;
+    padding: 14px 24px;
+    border-radius: 10px;
+    margin: 0 6px 10px;
+    text-decoration: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+footer .footer-buttons a:hover {
+    text-decoration: none;
+    box-shadow: 0 6px 16px rgba(232, 93, 4, 0.45);
+}
+footer small {
+    display: block;
+    text-align: center;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.9);
+    margin-top: 24px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Responsive: モバイルファースト維持（pxベース） */
+@media (max-width: 768px) {
+    .trailer { padding: 32px 16px 40px; }
+    section.video-section div.iframe-wrap iframe {
+        height: 300px;
+    }
+    .features ol > li h2 {
+        font-size: 16px;
+    }
+}
