@@ -110,15 +110,7 @@ h2 {
     padding: 0;
     background: transparent;
 }
-.eyecatch .eyecatch-title figure {
-    background: rgba(255, 255, 255, 0.5);
-    padding: 0;
-    border-radius: 6px;
-}
-.eyecatch .eyecatch-title figure {
-    margin: 0;
-}
-.eyecatch .eyecatch-title figure img {
+.eyecatch .eyecatch-title img {
     width: 100%;
     height: auto;
     display: block;
@@ -147,22 +139,6 @@ section {
 .video-section {
     padding: 32px 20px 48px;
     position: relative;
-}
-.video-section figure.bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-    margin: 0;
-    pointer-events: none;
-}
-.video-section figure.bg img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    object-position: center top;
 }
 .video-section .pv-frame-image {
     width: 100%;
@@ -195,30 +171,16 @@ section {
     margin: 0 auto;
     border-radius: 10px;
     overflow: hidden;
-    background: #0f172a;
+    background: #000;
+    padding-top: 56.25%;
 }
-.video-section .video-placeholder div {
-    width: 100%;
-    background-image: url(../assets/image/gameScreen.jpg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 200px;
-    display: block;
-    z-index: 0;
-}
-.video-section .play-overlay {
+.video-section .video-placeholder iframe {
     position: absolute;
     inset: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    pointer-events: none;
-}
-.video-section .play-overlay img {
-    width: 80px;
-    height: 80px;
-    opacity: 0.95;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
 }
 .video-section .btn-wrap {
     text-align: center;
