@@ -96,26 +96,29 @@ h2 {
     padding: 12px 16px;
     border-radius: 6px;
 }
-/* Main Hero: フル幅・余白なしで Eyecatch を表示 */
-main {
+
+/* Eyecatch: フル幅・余白なしで Eyecatch を表示（main 全体に効かせない） */
+.eyecatch {
     position: relative;
+    padding: 0;
+    background: transparent;
 }
-main h2 {
+.eyecatch .eyecatch-title {
     position: relative;
     margin: 0;
     line-height: 0;
     padding: 0;
     background: transparent;
 }
-main h2 figure {
+.eyecatch .eyecatch-title figure {
     background: rgba(255, 255, 255, 0.5);
     padding: 0;
     border-radius: 6px;
 }
-main h2 figure {
+.eyecatch .eyecatch-title figure {
     margin: 0;
 }
-main h2 figure img {
+.eyecatch .eyecatch-title figure img {
     width: 100%;
     height: auto;
     display: block;
@@ -141,10 +144,11 @@ section {
 }
 
 /* Video Section: PVを見る・ゴールド枠（PVFrame.png） */
-section.video-section {
+.video-section {
     padding: 32px 20px 48px;
+    position: relative;
 }
-section.video-section figure.bg {
+.video-section figure.bg {
     position: absolute;
     top: 0;
     left: 0;
@@ -154,13 +158,13 @@ section.video-section figure.bg {
     margin: 0;
     pointer-events: none;
 }
-section.video-section figure.bg img {
+.video-section figure.bg img {
     width: 100%;
     height: 100%;
     object-fit: contain;
     object-position: center top;
 }
-section.video-section .pv-frame-image {
+.video-section .pv-frame-image {
     width: 100%;
     background-image: url(../assets/image/PVFrame.png);
     background-size: cover;
@@ -170,14 +174,14 @@ section.video-section .pv-frame-image {
     display: block;
     z-index: 0;
 }
-section.video-section .video-section-inner {
+.video-section .video-section-inner {
     position: relative;
     z-index: 2;
     max-width: 900px;
     margin: 0 auto;
     padding: 0 20px;
 }
-section.video-section .pv-label {
+.video-section .pv-label {
     text-align: center;
     color: #333333;
     font-size: 18px;
@@ -185,7 +189,7 @@ section.video-section .pv-label {
     margin-bottom: 12px;
     padding: 8px 0;
 }
-section.video-section .video-placeholder {
+.video-section .video-placeholder {
     position: relative;
     max-width: 900px;
     margin: 0 auto;
@@ -193,7 +197,7 @@ section.video-section .video-placeholder {
     overflow: hidden;
     background: #0f172a;
 }
-section.video-section .video-placeholder div {
+.video-section .video-placeholder div {
     width: 100%;
     background-image: url(../assets/image/gameScreen.jpg);
     background-size: cover;
@@ -203,7 +207,7 @@ section.video-section .video-placeholder div {
     display: block;
     z-index: 0;
 }
-section.video-section .play-overlay {
+.video-section .play-overlay {
     position: absolute;
     inset: 0;
     display: flex;
@@ -211,22 +215,22 @@ section.video-section .play-overlay {
     justify-content: center;
     pointer-events: none;
 }
-section.video-section .play-overlay img {
+.video-section .play-overlay img {
     width: 80px;
     height: 80px;
     opacity: 0.95;
 }
-section.video-section .btn-wrap {
+.video-section .btn-wrap {
     text-align: center;
     margin-bottom: 24px;
 }
-section.video-section div.iframe-wrap {
+.video-section div.iframe-wrap {
     position: relative;
     z-index: 2;
     max-width: 900px;
     margin: 0 auto;
 }
-section.video-section div.iframe-wrap iframe {
+.video-section div.iframe-wrap iframe {
     width: 100%;
     max-width: 900px;
     height: 500px;
@@ -439,7 +443,7 @@ footer small {
 /* Responsive: モバイルファースト維持（pxベース） */
 @media (max-width: 768px) {
     .trailer { padding: 32px 16px 40px; }
-    section.video-section div.iframe-wrap iframe {
+    .video-section div.iframe-wrap iframe {
         height: 300px;
     }
     .features ol > li h2 {

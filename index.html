@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+    <title>スタディオン | SNSよりハマる、最高のゲーミフィケーション</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="スタディオンは、AIを活用した教育コンテンツを提供するモバイルゲームです。">
@@ -9,7 +10,6 @@
     <meta name="robots" content="index, follow">
     <meta name="googlebot" content="index, follow">
     <meta name="google" content="notranslate">
-    <title>スタディオン | SNSよりハマる、最高のゲーミフィケーション</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="assets/image/favicon.ico">
     <link rel="apple-touch-icon" href="assets/image/apple-touch-icon.png">
@@ -35,89 +35,94 @@
 
     <!-- Main -->
     <main>
-        <h2>
-            <figure>
-                <img src="assets/image/Eyecatch.png" alt="楽しく学んで差をつけろ！">
-            </figure>
-        </h2>
-    </main>
+        <!-- Eyecatch（無料プレイエリアまで拡張 / video-section を吸収） -->
+        <section class="eyecatch">
+            <h2 class="eyecatch-title">
+                <figure>
+                    <img src="assets/image/Eyecatch.png" alt="楽しく学んで差をつけろ！">
+                </figure>
+            </h2>
 
-    <!-- PV Section: ゴールド枠（PVを見る） -->
-    <section class="video-section">
-        <figure class="bg">
-            <div class="pv-frame-image" alt=""></div>
-        </figure>
-        <div class="video-section-inner">
-            <div class="btn-wrap">
-                <a href="#" class="btn-orange">PVを見る</a>
-            </div>
-            <div class="video-placeholder">
-                <div class="video-placeholder-image" alt="PVサムネイル"></div>
-                <div class="play-overlay">
-                    <img src="assets/image/play_circle.svg" alt="再生">
+            <!-- PV Section: ゴールド枠（PVを見る） -->
+            <div class="video-section">
+                <figure class="bg">
+                    <div class="pv-frame-image" alt=""></div>
+                </figure>
+                <div class="video-section-inner">
+                    <div class="btn-wrap">
+                        <a href="#" class="btn-orange">PVを見る</a>
+                    </div>
+                    <!-- あとでiframeにするかも-->
+                    <div class="video-placeholder">
+                        <div class="video-placeholder-image" alt="PVサムネイル"></div>
+                        <div class="play-overlay">
+                            <img src="assets/image/play_circle.svg" alt="再生">
+                        </div>
+                    </div>
+                    <div class="iframe-wrap" style="display:none;">
+                        <iframe src="" frameborder="0" allowfullscreen title="PV動画"></iframe>
+                    </div>
                 </div>
             </div>
-            <div class="iframe-wrap" style="display:none;">
-                <iframe src="" frameborder="0" allowfullscreen title="PV動画"></iframe>
+
+            <!-- CTA: 無料プレイはこちら！（Figma: PVの次） -->
+            <div class="trailer">
+                <p class="trailer-cta">
+                    <a href="#" class="btn-orange">無料プレイはこちら！</a>
+                </p>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- CTA: 無料プレイはこちら！（Figma: PVの次） -->
-    <div class="trailer">
-        <p class="trailer-cta">
-            <a href="#" class="btn-orange">無料プレイはこちら！</a>
-        </p>
-    </div>
+        <!-- Features Section -->
+        <section class="features">
+            <h2>
+                Features
+                <img src="assets/image/featuresBG.png" alt="Features">
+            </h2>
+            
+            <ol>
+                <!-- Feature 1: Figma 止まらない成長ループ -->
+                <li>
+                    <h2><img src="assets/image/Features01_badge.png" alt="1"> 止まらない成長ループ</h2>
+                    <img src="assets/image/Features01.png" alt="学び・育成・戦闘">
+                </li>
+                
+                <!-- Feature 2: スキルを駆使して、クイズや問題を解こう！ -->
+                <li>
+                    <h2><img src="assets/image/Features02_badge.png" alt="2"> スキルを駆使して、クイズや問題を解こう！</h2>
+                    <img src="assets/image/Features02.png" alt="Feature 2">
+                </li>
+                
+                <!-- Feature 3: 俺だけの最高のパーティーを組もう！ -->
+                <li>
+                    <h2><img src="assets/image/Features03_badge.png.png" alt="3"> 俺だけの最高のパーティーを組もう！</h2>
+                    <img src="assets/image/Features03.png" alt="Feature 3">
+                </li>
+                
+                <!-- Feature 4: AIのサポートで成績アップ！ -->
+                <li>
+                    <h2><img src="assets/image/Features04_badge.png.png" alt="4"> AIのサポートで成績アップ！</h2>
+                    <img src="assets/image/Features04.png" alt="Feature 4">
+                </li>
+                
+                <!-- Feature 5: 全国最強のパーティーを組んで勝利を目指そう！ -->
+                <li>
+                    <h2><img src="assets/image/Features05_badge.png.png" alt="5"> 全国最強のパーティーを組んで勝利を目指そう！</h2>
+                    <img src="assets/image/Features05.png" alt="Feature 5">
+                </li>
+            </ol>
+        </section>
 
-    <!-- Features Section -->
-    <section class="features">
-        <h2>
-            <img src="assets/image/featuresBG.png" alt="Features">
-        </h2>
-        
-        <ol>
-            <!-- Feature 1: Figma 止まらない成長ループ -->
-            <li>
-                <h2><img src="assets/image/Features01_badge.png" alt="1"> 止まらない成長ループ</h2>
-                <img src="assets/image/Features01.png" alt="学び・育成・戦闘">
-            </li>
-            
-            <!-- Feature 2: スキルを駆使して、クイズや問題を解こう！ -->
-            <li>
-                <h2><img src="assets/image/Features02_badge.png" alt="2"> スキルを駆使して、クイズや問題を解こう！</h2>
-                <img src="assets/image/Features02.png" alt="Feature 2">
-            </li>
-            
-            <!-- Feature 3: 俺だけの最高のパーティーを組もう！ -->
-            <li>
-                <h2><img src="assets/image/Features03_badge.png.png" alt="3"> 俺だけの最高のパーティーを組もう！</h2>
-                <img src="assets/image/Features03.png" alt="Feature 3">
-            </li>
-            
-            <!-- Feature 4: AIのサポートで成績アップ！ -->
-            <li>
-                <h2><img src="assets/image/Features04_badge.png.png" alt="4"> AIのサポートで成績アップ！</h2>
-                <img src="assets/image/Features04.png" alt="Feature 4">
-            </li>
-            
-            <!-- Feature 5: 全国最強のパーティーを組んで勝利を目指そう！ -->
-            <li>
-                <h2><img src="assets/image/Features05_badge.png.png" alt="5"> 全国最強のパーティーを組んで勝利を目指そう！</h2>
-                <img src="assets/image/Features05.png" alt="Feature 5">
-            </li>
-        </ol>
-    </section>
-
-    <!-- CTA: 体験版をプレイ（Figma: 装飾フレーム内ボタン） -->
-    <section class="extra-section">
-        <figure class="extra-frame">
-            <img src="assets/image/DemoPlayFrame.png" alt="">
-        </figure>
-        <p class="extra-cta">
-            <a href="#" class="btn-orange">体験版をプレイ<img src="assets/image/finger.png" alt="" class="finger-hint" aria-hidden="true"></a>
-        </p>
-    </section>
+        <!-- CTA: 体験版をプレイ（Figma: 装飾フレーム内ボタン） -->
+        <section class="extra-section">
+            <figure class="extra-frame">
+                <img src="assets/image/DemoPlayFrame.png" alt="">
+            </figure>
+            <p class="extra-cta">
+                <a href="#" class="btn-orange">体験版をプレイ<img src="assets/image/finger.png" alt="" class="finger-hint" aria-hidden="true"></a>
+            </p>
+        </section>
+    </main>
 
     <!-- Footer -->
     <footer>
@@ -137,7 +142,7 @@
             <li><a href="#">メンバーページへ</a></li>
         </ul>
         
-        <small>&copy; 2026 Studion. All rights reserved.</small>
+        <small>&copy; 2026 Studion.</small>
     </footer>
 </body>
 </html>
