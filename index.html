@@ -41,19 +41,19 @@
                 <img src="assets/image/Eyecatch.png" alt="楽しく学んで差をつけろ！">
             </h2>
 
-            <!-- PV Section: ゴールド枠（PVを見る） -->
-            <div class="video-section">
-                <div class="pv-frame-image">
-                    <div class="video-section-inner">
-                        <div class="btn-wrap">
+            <!-- PV Section: ゴールド枠（エリア＝フレーム上限、PVを見る／動画で切り分け） -->
+            <section class="pv-area">
+                <div class="pv-area__frame" aria-hidden="true">
+                    <div class="pv-area__inner">
+                        <div class="pv-area__watch">
                             <p class="watch_pv">PVを見る</p>
                         </div>
-                        <div class="video-placeholder">
+                        <div class="pv-area__video">
                             <iframe src="" frameborder="0" allowfullscreen title="PV動画"></iframe>
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
 
             <!-- CTA: 無料プレイはこちら！（Figma: PVの次） -->
             <div class="trailer">
@@ -66,38 +66,52 @@
         <!-- Features Section -->
         <section class="features">
             <h2 style="background-image: url('assets/image/featuresBG.png'); background-size: contain; background-repeat: no-repeat; background-position: center;">
-                Features
+                <span class="features-title-text">Features</span>
             </h2>
             
             <ol>
                 <!-- Feature 1: Figma 止まらない成長ループ -->
                 <li>
-                    <img src="assets/image/Features01.png" alt="背景" class="feature-bg">
+                    <figure class="feature-figure">
+                        <img src="assets/image/Features01.png" alt="止まらない成長ループ" class="feature-bg">
+                    </figure>
                     <h3><img src="assets/image/Features01_badge.png" alt="1"> 止まらない成長ループ</h3>
                 </li>
                 
                 <!-- Feature 2: スキルを駆使して、クイズや問題を解こう！ -->
                 <li>
-                    <img src="assets/image/Features02.png" alt="背景" class="feature-bg">
-                    <h3><img src="assets/image/Features02_badge.png" alt="2"> スキルを駆使して、クイズや問題を解こう！</h3>
+                    <figure class="feature-figure">
+                        <img src="assets/image/Features02.png" alt="スキルを駆使して、クイズや問題を解こう！" class="feature-bg">
+                    </figure>
+                    <h3><img src="assets/image/Features02_badge.png" alt="2"> スキルを駆使して、<br/>クイズを蹴散らそう！</h3>
                 </li>
                 
                 <!-- Feature 3: 俺だけの最高のパーティーを組もう！ -->
                 <li>
-                    <img src="assets/image/Features03.png" alt="背景" class="feature-bg">
-                    <h3><img src="assets/image/Features03_badge.png.png" alt="3">君だけの最高のパーティーを組もう！</h3>
+                    <figure class="feature-figure">
+                        <img src="assets/image/Features03.png" alt="君だけの最高のパーティーを組もう！" class="feature-bg">
+                    </figure>
+                    <h3><img src="assets/image/Features03_badge.png" alt="3">君だけの最高の<br/>パーティーを創ろう！</h3>
                 </li>
                 
                 <!-- Feature 4: AIのサポートで成績アップ！ -->
                 <li>
-                    <img src="assets/image/Features04.png" alt="背景" class="feature-bg">
-                    <h3><img src="assets/image/Features04_badge.png.png" alt="4"> AIのサポートで成績アップ！</h3>
+                    <figure class="feature-figure">
+                        <img src="assets/image/Features04.png" alt="AIのサポートで成績アップ！" class="feature-bg">
+                    </figure>
+                    <h3><img src="assets/image/Features04_badge.png" alt="4"> AIのサポートで<br/>成績もアップ！</h3>
                 </li>
                 
                 <!-- Feature 5: 全国最強のパーティーを組んで勝利を目指そう！ -->
-                <li>
-                    <img src="assets/image/Features05.png" alt="背景" class="feature-bg">
-                    <h3><img src="assets/image/Features05_badge.png.png" alt="5"> 全国最強のパーティーを組んで勝利を目指そう！</h3>
+                <li class="feature-05">
+                    <figure class="feature05-visual">
+                        <img src="assets/image/Features05_bg.png" alt="全国最強のパーティーを組んで勝利を目指そう！" class="feature05-bg">
+                        <img src="assets/image/Features05_1.png" alt="仲間キャラクター" class="feature05-chara feature05-chara-left">
+                        <img src="assets/image/Features05_2.png" alt="ライバルキャラクター" class="feature05-chara feature05-chara-right">
+                    </figure>
+                    <h3>
+                        <img src="assets/image/Features05_badge.png" alt="5"> 全国対戦で<br/>勝利を掴め！
+                    </h3>
                 </li>
             </ol>
         </section>
