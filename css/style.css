@@ -31,6 +31,14 @@
     box-sizing: border-box;
 }
 
+@font-face {
+    font-family: 'Keifont';
+    /* あなたのGitHubリポジトリにあるファイルを参照 */
+    src: url('https://sakazeruga.github.io/studion_web_prototype/assets/fonts/k-font/keifont.ttf') format('truetype');
+    font-display: swap;
+  }
+  
+
 body {
     font-family: 'Hiragino Kaku Gothic Pro', 'Meiryo', sans-serif;
     line-height: 1.6;
@@ -41,13 +49,13 @@ body {
 }
 
 img {
-    width: 100%;
+    /* width: 100%; */
 }
 
 /* 共通: オレンジCTA（Figma 統一） */
 .btn-orange {
     display: inline-block;
-    background: linear-gradient(180deg, var(--color-primary-light) 0%, var(--color-primary) 100%);
+    background: linear-gradient(180deg,#F40 43.27%, #F2902D 100%);
     color: #fff;
     font-weight: bold;
     text-align: center;
@@ -66,12 +74,16 @@ img {
 /* Header: 白背景（Figma 366-269） */
 header {
     background: #ffffff;
-    padding: 14px 20px;
+    padding-left: 2vw;
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: relative;
     border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.home_logo{
+    max-width: 42vw;
 }
 
 header h1 {
@@ -246,11 +258,11 @@ section {
 .features-title-text {
     display: inline-block;
     /* Features 見出し用タイポグラフィ */
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
-    -webkit-text-stroke-width: 2px;
-    -webkit-text-stroke-color: #FFF;
+    /* text-shadow: 0px 0px 12px rgba(0, 0, 0, 0.1); */
+    -webkit-text-stroke-width: 0.1px;
+    -webkit-text-stroke-color: rgba(255,255,255,0.8);
     font-family: "RocknRoll One", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    font-size: 52px;
+    font-size: 12vw;
     line-height: normal;
     /* アクアグラデーションテキスト */
     background: var(--Studion-Aqua-Style, linear-gradient(180deg, #2AB0E7 0%, #176281 100%));
@@ -301,7 +313,7 @@ section {
     background: rgba(255,255,255,0.5);
     z-index: 100;
     position: relative;
-    height: 17vw;
+    height: 20vw;
     margin: 0vw 0;
 }
 
@@ -321,9 +333,22 @@ section {
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    top: -2vw;
+    top: 0vw;
     position: relative;
     /* text-shadow: 0px 0px; */
+}
+
+/* 特定の大きい文字に適用するスタイル */
+.emphasis-large {
+    font-size: 9.5vw; /* 元の大きいサイズを維持 */
+}
+
+.emphasis-slarge {
+    font-size: 15vw; /* 元の大きいサイズを維持 */
+}
+/* h3内のテキストブロック：brが効くようにinline-blockで折り返し */
+.h3-text {
+    display: inline-block;
 }
 
 .features ol>li h3 img {
@@ -349,6 +374,12 @@ section {
 }
 
 /* Feature 3: 君だけの最高のパーティーを組もう！ */
+.features ol>li.feature-03 {
+    margin: 18vw 0 -15vw 0;
+    position: relative;
+    z-index: 40;
+}
+
 .feature-03-bg {
     background-image: url(../assets/image/Features03_MaskGroup.png);
     background-repeat: no-repeat;
@@ -363,6 +394,8 @@ section {
     background-repeat: no-repeat;
     background-position-x: 0vw;
     background-size: contain;
+    position: relative;
+    z-index: 0;
     margin-top: -5vw;
 }
 
@@ -508,20 +541,18 @@ footer {
 }
 
 footer .footer-install {
-    color: #FFF;
     text-align: center;
-    -webkit-text-stroke-width: 2px;
-    -webkit-text-stroke-color: #F40;
     background: linear-gradient(180deg, #F40 43.27%, #F2902D 100%);
-    -webkit-background-clip: text;
     background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     font-family: "Keifont", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     font-size: 7vw;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
     padding: 12px 16px;
-    margin-bottom: 24px;
+    margin-top: 5vw;
 }
 
 footer .app-buttons {
@@ -559,6 +590,7 @@ footer .footer-logo {
 
 footer .footer-logo img {
     max-width: 375px;
+    width: 70vw;
     height: auto;
 }
 
