@@ -1,0 +1,642 @@
+/* Design system: Figma 366-269 準拠（カラーコード厳守） */
+:root {
+    --color-header-bg: #ffffff;
+    --color-header-text: #333333;
+    --color-primary: #FF6600;
+    --color-primary-light: #FF8533;
+    --color-primary-red: #FF4500;
+    --color-section-dark: #0f172a;
+    --color-footer-bg: #93c5fd;
+    --color-footer-deep: #4169E1;
+    --color-app-btn: #333333;
+    --color-light-blue: #ADD8E6;
+    --color-blue: #4169E1;
+    --color-gold: #D4AF37;
+    --color-green: #00A86B;
+    --color-pink: #FFCCFF;
+    --radius-btn: 10px;
+    --padding-btn-y: 14px;
+    --padding-btn-x: 28px;
+    --space-section-y: 48px;
+    --space-section-x: 20px;
+    --space-block: 24px;
+    --space-inline: 12px;
+    --shadow-btn: 0 2px 4px rgba(0, 0, 0, 0.15);
+    --shadow-feature-header: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Hiragino Kaku Gothic Pro', 'Meiryo', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: url(../assets/image/bg.jpg) center top no-repeat;
+    background-size: cover;
+    background-attachment: scroll;
+}
+
+img {
+    width: 100%;
+}
+
+/* 共通: オレンジCTA（Figma 統一） */
+.btn-orange {
+    display: inline-block;
+    background: linear-gradient(180deg, var(--color-primary-light) 0%, var(--color-primary) 100%);
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+    padding: 3vw 12vw;
+    /* border-radius: 10px; */
+    text-decoration: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+    border: #FFF solid 3px;
+    cursor: pointer;
+}
+
+.btn-orange:hover {
+    box-shadow: 0 6px 18px rgba(232, 93, 4, 0.45);
+}
+
+/* Header: 白背景（Figma 366-269） */
+header {
+    background: #ffffff;
+    padding: 14px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+header h1 {
+    position: relative;
+}
+
+header h1 a {
+    text-decoration: none;
+    color: inherit;
+}
+
+header h1 a img {
+    display: block;
+}
+
+header>a {
+    position: relative;
+}
+
+header .menu-toggle img {
+    display: block;
+}
+
+/* 各h2: 半透明白帯 */
+h2 {
+    background: rgba(255, 255, 255, 0.5);
+    padding: 12px 16px;
+    border-radius: 6px;
+}
+
+/* Eyecatch: フル幅・余白なしで Eyecatch を表示（main 全体に効かせない） */
+.eyecatch {
+    position: relative;
+    padding: 0;
+    background: transparent;
+}
+
+.eyecatch .eyecatch-title {
+    position: relative;
+    margin: 0;
+    line-height: 0;
+    padding: 0;
+    background: transparent;
+}
+
+.eyecatch .eyecatch-title img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 4px;
+}
+
+/* Trailer: 中央CTA（背景は body の bg.jpg） */
+.trailer {
+    background: transparent;
+    text-align: center;
+}
+
+.trailer-cta {
+    margin: 15px 0 -30px 0;
+    text-align: center;
+}
+
+/* Section 共通（余白統一・背景は body の bg.jpg） */
+section {
+    position: relative;
+    background: transparent;
+}
+
+/* PV Area: エリア＝フレームサイズ上限、PVを見る／動画で切り分け・動画は2:1で約20px余白 */
+.pv-area {
+    position: relative;
+    width: 100%;
+    margin: -12vw 0 0 0;
+    overflow-x: hidden;
+}
+
+/* フレーム（ゴールド枠）：表示サイズがエリアの上限 */
+.pv-area__frame {
+    position: relative;
+    z-index: 0;
+    width: 120vw;
+    overflow: hidden;
+    margin-left: -10vw;
+    padding: 17% 0 26% 0;
+    box-sizing: content-box;
+    pointer-events: none;
+}
+
+.pv-area__frame::before {
+    content: "";
+    z-index: 999;
+    position: absolute;
+    inset: 0;
+    background-image: url(../assets/image/PVFrame.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: brightness(1.4);
+}
+
+/* エリア内側：フレーム内に収まるコンテンツ領域 */
+.pv-area__inner {
+    position: relative;
+    z-index: 1;
+    max-width: min(900px, calc(100vw - 40px));
+    margin: 0 auto;
+    padding: 10px;
+}
+
+/* PVを見る要素（ラベル・CTA） */
+.pv-area__watch {
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.pv-area__watch .watch_pv {
+    color: #FFF;
+    text-align: center;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: #F40;
+    background: linear-gradient(180deg, #F40 43.27%, #F2902D 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    font-family: "Keifont", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    padding: 12px 16px;
+}
+
+/* 動画要素：縦横比2:1、エリアより約20px小さい */
+.pv-area__video {
+    position: relative;
+    width: calc(85% + 5vw);
+    border-radius: 10px;
+    margin: 0 auto;
+    background: #000;
+    aspect-ratio: 2 / 1;
+}
+
+.pv-area__video iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+}
+
+/* Features Section: Features タイトル＋図（featuresBG.png） */
+.features {
+    background: transparent;
+}
+
+.features>h2 {
+    display: block;
+    overflow: visible;
+    margin-bottom: 4vw;
+    text-align: center;
+    padding: 80px 16px 30px;
+    background: transparent;
+    border-radius: 0;
+    background-image: url(../assets/image/featuresBG.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: brightness(1.2);
+}
+
+.features-title-text {
+    display: inline-block;
+    /* Features 見出し用タイポグラフィ */
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: #FFF;
+    font-family: "RocknRoll One", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 52px;
+    line-height: normal;
+    /* アクアグラデーションテキスト */
+    background: var(--Studion-Aqua-Style, linear-gradient(180deg, #2AB0E7 0%, #176281 100%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.features>h2 img {
+    max-width: 320px;
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.features ol {
+    list-style: none;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* 各機能: 縦積み・オレンジバナー風見出し＋画像（白カードなし） */
+.features ol>li {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 0px;
+    padding: 0;
+    background: transparent;
+    border-radius: 0;
+    box-shadow: none;
+    display: block;
+}
+
+.features ol>li:last-child {
+    margin-bottom: 0;
+}
+
+.features ol>li .feature-bg {
+    width: 100%;
+    max-width: 560px;
+    height: auto;
+    display: block;
+    margin: 0px auto -25%;
+    border-radius: 10px;
+}
+
+.feature-content {
+    background: rgba(255,255,255,0.5);
+    z-index: 100;
+    position: relative;
+    height: 17vw;
+    margin: 0vw 0;
+}
+
+.features ol>li h3 {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 12px;
+    /* DS-Feature-Header */
+    font-family: Keifont, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 7.5vw;
+    /* バッジ高さ107pxの半分程度 */
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.1;
+    background: var(--Studion-Fire-Style, linear-gradient(180deg, #F40 43.27%, #F2902D 100%));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    top: -2vw;
+    position: relative;
+    /* text-shadow: 0px 0px; */
+}
+
+.features ol>li h3 img {
+    width: auto;
+    height: 22vw;
+    aspect-ratio: 97 / 107;
+    flex-shrink: 0;
+    z-index: 200;
+    position: relative;
+}
+
+/* Feature 1: 止まらない成長ループ */
+.feature-01-title {
+    margin-top: 18vw;
+}
+
+/* Feature 2: スキルを駆使して、クイズや問題を解こう！ */
+.feature-02-bg {
+    background-image: url(../assets/image/Features02_BGEFFECT.png);
+    background-repeat: no-repeat;
+    background-position-y: -10vw;
+    background-size: cover;
+}
+
+/* Feature 3: 君だけの最高のパーティーを組もう！ */
+.feature-03-bg {
+    background-image: url(../assets/image/Features03_MaskGroup.png);
+    background-repeat: no-repeat;
+    background-position-x: 0vw;
+    background-size: contain;
+    margin-top: 17vw;
+}
+
+/* Feature 4: AIのサポートで成績アップ！ */
+.feature-04-bg {
+    background-image: url(../assets/image/Features04_MaskGroup.png);
+    background-repeat: no-repeat;
+    background-position-x: 0vw;
+    background-size: contain;
+    margin-top: -5vw;
+}
+
+.feature-04-title {
+    margin-top: -60vw;
+}
+
+/* Feature 5: 全国最強のパーティーを組んで勝利を目指そう！ */
+.feature-05-content {
+    top: -94vw;
+    position: relative;
+    height: 27vw;
+}
+
+.features ol>li>img {
+    width: 100%;
+    max-width: 560px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+
+.features ol>li ul {
+    list-style: disc;
+    padding-left: 24px;
+    margin-top: 16px;
+}
+
+.features ol>li ul li {
+    margin-bottom: 8px;
+    padding: 0;
+    background: none;
+    box-shadow: none;
+}
+
+/* Feature 5 見出しだけ別スタイル */
+.features ol>li.feature-05 h3 {
+    /* テキストレイヤー強調 */
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #ffffff;
+    font-family: VDL-LogoJrBlack, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 950;
+    line-height: 13vw;
+    background: linear-gradient(180deg, #F40 30.77%, #FFF 52.4%, #F40 69.23%, #F2902D 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    top: 0vw;
+}
+
+/* Feature 5 専用レイアウト（Figma: 背景＋2キャラ合成） */
+.features ol>li.feature-05 {
+    margin-bottom: -70vw;
+}
+
+.feature05-visual {
+    position: relative;
+    width: 100%;
+    max-width: 560px;
+    margin: 0 auto 12px;
+}
+
+.feature05-visual img {
+    display: block;
+}
+
+.feature05-bg {
+    width: 100%;
+    height: auto;
+    mix-blend-mode: difference;
+    /* ページ背景と差分ブレンド */
+    width: 300vw;
+    left: -100vw;
+    position: relative;
+    z-index: 0;
+    filter: opacity(0.6);
+}
+
+.feature05-chara {
+    position: absolute;
+    bottom: 0;
+    width: 54%;
+    height: auto;
+}
+
+.feature05-chara-left {
+    left: -4%;
+}
+
+.feature05-chara-right {
+    right: -4%;
+}
+
+/* Trial Play Section: PVFrame パターン（枠＝::before、内側にCTA） */
+.trial-play {
+    position: relative;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.trial-play__frame {
+    position: relative;
+    z-index: 0;
+    width: 120vw;
+    /* max-width: 563px; */
+    left: -5vw;
+    margin-left: -10vw;
+    padding: 14% 8% 12% 8%;
+    box-sizing: content-box;
+    pointer-events: none;
+}
+
+.trial-play__frame::before {
+    content: "";
+    z-index: 999;
+    position: absolute;
+    inset: 0;
+    background-image: url(../assets/image/DemoPlayFrame.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.trial-play__inner {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    /* margin-top: 4vw; */
+}
+
+.trial-play__cta {
+    display: inline-block;
+    margin: auto 0;
+}
+
+/* Footer（背景は body の bg.jpg） */
+footer {
+    background: linear-gradient(180deg, #FFF 62.5%, #2AB0E7 99.52%);
+    color: #fff;
+}
+
+footer .footer-install {
+    color: #FFF;
+    text-align: center;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: #F40;
+    background: linear-gradient(180deg, #F40 43.27%, #F2902D 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    font-family: "Keifont", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 7vw;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    padding: 12px 16px;
+    margin-bottom: 24px;
+}
+
+footer .app-buttons {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+footer .app-btn {
+    display: block;
+    justify-content: center;
+    gap: 10px;
+    width: 160px;
+}
+
+footer .app-btn img {
+    height: auto;
+    width: 100%;
+}
+
+footer .app-btn span {
+    display: block;
+    font-size: 12px;
+    font-weight: normal;
+    margin-top: 2px;
+}
+
+footer .footer-logo {
+    margin: 0 auto 24px;
+    text-align: center;
+}
+
+footer .footer-logo img {
+    max-width: 375px;
+    height: auto;
+}
+
+footer ul.footer-buttons {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+footer ul.footer-buttons li a {
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+}
+
+/* フッターのオレンジボタン（お問い合わせ・メンバーへ登録） */
+footer .footer-buttons a {
+    display: block;
+    background: linear-gradient(180deg, #FF8533 0%, #FF6600 100%);
+    color: #fff;
+    font-weight: bold;
+    padding: 14px 24px;
+    border-radius: 10px;
+    margin: 0 6px 10px;
+    text-decoration: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+    width: 180px;
+}
+
+footer .footer-buttons a:hover {
+    text-decoration: none;
+    box-shadow: 0 6px 16px rgba(232, 93, 4, 0.45);
+}
+
+footer small {
+    display: block;
+    text-align: center;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.9);
+    margin-top: 24px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Responsive: モバイルファースト維持（pxベース） */
+@media  {
+    .trailer {}
+
+    .features ol>li h3 {
+        
+        /* モバイルでも大きめに表示 */
+    }
+
+    /* Feature05 キャラをモバイルでBG上に上下2段配置 */
+    .feature05-visual {
+        max-width: 480px;
+        overflow: hidden;
+        margin-top: -30vw;
+    }
+
+    .feature05-chara {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 70%;
+        height: auto;
+    }
+
+    .feature05-chara-left {
+        top: 50vw;
+        bottom: auto;
+        width: 100vw;
+    }
+
+    .feature05-chara-right {
+    bottom: 50vw;
+    width: 100vw;
+    }
+}
