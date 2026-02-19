@@ -344,7 +344,7 @@ section {
 }
 
 .emphasis-slarge {
-    font-size: 15vw; /* 元の大きいサイズを維持 */
+    font-size: 13.5vw; /* 元の大きいサイズを維持 */
 }
 /* h3内のテキストブロック：brが効くようにinline-blockで折り返し */
 .h3-text {
