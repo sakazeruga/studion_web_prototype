@@ -58,6 +58,7 @@ img {
     border: none;
     cursor: pointer;
 }
+
 .btn-orange:hover {
     box-shadow: 0 6px 18px rgba(232, 93, 4, 0.45);
 }
@@ -76,18 +77,22 @@ header {
 header h1 {
     position: relative;
 }
+
 header h1 a {
     text-decoration: none;
     color: inherit;
 }
+
 header h1 a img {
     height: 36px;
     width: auto;
     display: block;
 }
-header > a {
+
+header>a {
     position: relative;
 }
+
 header .menu-toggle img {
     height: 24px;
     width: 24px;
@@ -107,6 +112,7 @@ h2 {
     padding: 0;
     background: transparent;
 }
+
 .eyecatch .eyecatch-title {
     position: relative;
     margin: 0;
@@ -114,6 +120,7 @@ h2 {
     padding: 0;
     background: transparent;
 }
+
 .eyecatch .eyecatch-title img {
     width: 100%;
     height: auto;
@@ -126,6 +133,7 @@ h2 {
     background: transparent;
     text-align: center;
 }
+
 .trailer-cta {
     margin: 15px 0 -30px 0;
     text-align: center;
@@ -156,6 +164,7 @@ section {
     box-sizing: content-box;
     pointer-events: none;
 }
+
 .pv-area__frame::before {
     content: "";
     z-index: 999;
@@ -182,6 +191,7 @@ section {
     text-align: center;
     margin-bottom: 8px;
 }
+
 .pv-area__watch .watch_pv {
     color: #FFF;
     text-align: center;
@@ -207,6 +217,7 @@ section {
     background: #000;
     aspect-ratio: 2 / 1;
 }
+
 .pv-area__video iframe {
     position: absolute;
     inset: 0;
@@ -220,13 +231,15 @@ section {
 .features {
     background: transparent;
 }
-.features > h2 {
+
+.features>h2 {
     display: block;
     overflow: visible;
     margin-bottom: 24px;
     text-align: center;
     padding: 80px 16px 30px;
-    background: transparent; /* 背景（翼画像）はinline styleに任せる */
+    background: transparent;
+    /* 背景（翼画像）はinline styleに任せる */
     border-radius: 0;
     background-image: url(/assets/image/featuresBG.png);
     background-size: contain;
@@ -234,6 +247,7 @@ section {
     background-position: center;
     filter: brightness(1.2);
 }
+
 .features-title-text {
     display: inline-block;
     /* Features 見出し用タイポグラフィ */
@@ -248,49 +262,63 @@ section {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
-.features > h2 img {
+
+.features>h2 img {
     max-width: 320px;
     width: 100%;
     height: auto;
     display: block;
     margin: 0 auto;
 }
+
 .features ol {
     list-style: none;
     max-width: 900px;
     margin: 0 auto;
 }
+
 /* 各機能: 縦積み・オレンジバナー風見出し＋画像（白カードなし） */
-.features ol > li {
+.features ol>li {
     position: relative;
     z-index: 1;
-    margin-bottom: 40px;
+    margin-bottom: 0px;
     padding: 0;
     background: transparent;
     border-radius: 0;
     box-shadow: none;
     display: block;
 }
-.features ol > li:last-child {
+
+.features ol>li:last-child {
     margin-bottom: 0;
 }
-.features ol > li .feature-bg {
+
+.features ol>li .feature-bg {
     width: 100%;
     max-width: 560px;
     height: auto;
     display: block;
-    margin: 0 auto 12px;
+    margin: 0px auto -25%;
     border-radius: 10px;
 }
-.features ol > li h3 {
+
+.feature-content {
+    background: rgba(255,255,255,0.5);
+    z-index: 100;
+    position: relative;
+    height: 17vw;
+    margin: 0vw 0;
+}
+
+.features ol>li h3 {
     display: flex;
     align-items: center;
-    gap: 12px;
     flex-wrap: wrap;
     margin-bottom: 12px;
     /* DS-Feature-Header */
     font-family: Keifont, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    font-size: 54px; /* バッジ高さ107pxの半分程度 */
+    font-size: 7.5vw;
+    /* バッジ高さ107pxの半分程度 */
     font-style: normal;
     font-weight: 400;
     line-height: 1.1;
@@ -298,14 +326,20 @@ section {
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    top: -2vw;
+    position: relative;
 }
-.features ol > li h3 img {
-    width: 97px;
-    height: 107px;
+
+.features ol>li h3 img {
+    width: auto;
+    height: 22vw;
     aspect-ratio: 97 / 107;
     flex-shrink: 0;
+    z-index: 200;
+    position: relative;
 }
-.features ol > li > img {
+
+.features ol>li>img {
     width: 100%;
     max-width: 560px;
     height: auto;
@@ -313,12 +347,14 @@ section {
     margin: 0 auto;
     border-radius: 10px;
 }
-.features ol > li ul {
+
+.features ol>li ul {
     list-style: disc;
     padding-left: 24px;
     margin-top: 16px;
 }
-.features ol > li ul li {
+
+.features ol>li ul li {
     margin-bottom: 8px;
     padding: 0;
     background: none;
@@ -326,7 +362,7 @@ section {
 }
 
 /* Feature 5 見出しだけ別スタイル */
-.features ol > li.feature-05 h3 {
+.features ol>li.feature-05 h3 {
     /* テキストレイヤー強調 */
     text-shadow: 0 -8px 12px #CC5322, 0 3px 0 #F40;
     -webkit-text-stroke-width: 1px;
@@ -344,32 +380,44 @@ section {
 }
 
 /* Feature 5 専用レイアウト（Figma: 背景＋2キャラ合成） */
-.features ol > li.feature-05 {
-    margin-bottom: 48px;
+.features ol>li.feature-05 {
+    margin-bottom: -70vw;
 }
+
 .feature05-visual {
     position: relative;
     width: 100%;
     max-width: 560px;
     margin: 0 auto 12px;
 }
+
 .feature05-visual img {
     display: block;
 }
+
 .feature05-bg {
     width: 100%;
     height: auto;
-    mix-blend-mode: difference; /* ページ背景と差分ブレンド */
+    mix-blend-mode: difference;
+    /* ページ背景と差分ブレンド */
+    width: 300vw;
+    left: -100vw;
+    position: relative;
+    z-index: 0;
+    filter: opacity(0.6);
 }
+
 .feature05-chara {
     position: absolute;
     bottom: 0;
     width: 54%;
     height: auto;
 }
+
 .feature05-chara-left {
     left: -4%;
 }
+
 .feature05-chara-right {
     right: -4%;
 }
@@ -379,14 +427,16 @@ footer {
     background: linear-gradient(180deg, #FFF 62.5%, #2AB0E7 99.52%);
     color: #fff;
 }
+
 footer .footer-install {
     text-align: center;
     margin-bottom: 24px;
     color: #FF6600;
     font-weight: bold;
     font-size: 17px;
-    text-shadow: 0 0 1px #fff, 0 1px 2px rgba(0,0,0,0.2);
+    text-shadow: 0 0 1px #fff, 0 1px 2px rgba(0, 0, 0, 0.2);
 }
+
 footer .app-buttons {
     list-style: none;
     display: flex;
@@ -395,30 +445,36 @@ footer .app-buttons {
     gap: 12px;
     margin-bottom: 24px;
 }
+
 footer .app-btn {
     display: block;
     justify-content: center;
     gap: 10px;
     width: 160px;
 }
+
 footer .app-btn img {
     height: auto;
     width: 100%;
 }
+
 footer .app-btn span {
     display: block;
     font-size: 12px;
     font-weight: normal;
     margin-top: 2px;
 }
+
 footer .footer-logo {
     margin: 0 auto 24px;
     text-align: center;
 }
+
 footer .footer-logo img {
     max-width: 200px;
     height: auto;
 }
+
 footer ul.footer-buttons {
     list-style: none;
     display: flex;
@@ -426,11 +482,13 @@ footer ul.footer-buttons {
     flex-wrap: wrap;
     width: 100%;
 }
+
 footer ul.footer-buttons li a {
     color: #fff;
     text-decoration: none;
     text-align: center;
 }
+
 /* フッターのオレンジボタン（お問い合わせ・メンバーへ登録） */
 footer .footer-buttons a {
     display: block;
@@ -449,6 +507,7 @@ footer .footer-buttons a:hover {
     text-decoration: none;
     box-shadow: 0 6px 16px rgba(232, 93, 4, 0.45);
 }
+
 footer small {
     display: block;
     text-align: center;
@@ -460,16 +519,20 @@ footer small {
 }
 
 /* Responsive: モバイルファースト維持（pxベース） */
-@media (max-width: 768px) {
+@media  {
     .trailer {}
-    .features ol > li h3 {
-        font-size: 36px; /* モバイルでも大きめに表示 */
+
+    .features ol>li h3 {
+        
+        /* モバイルでも大きめに表示 */
     }
 
     /* Feature05 キャラをモバイルでBG上に上下2段配置 */
     .feature05-visual {
         max-width: 480px;
+        margin-top: -30vw;
     }
+
     .feature05-chara {
         position: absolute;
         left: 50%;
@@ -477,12 +540,15 @@ footer small {
         width: 70%;
         height: auto;
     }
+
     .feature05-chara-left {
-        top: 4%;
+        top: 50vw;
         bottom: auto;
+        width: 100vw;
     }
+
     .feature05-chara-right {
-        bottom: 4%;
-        top: auto;
+    bottom: 50vw;
+    width: 100vw;
     }
 }
