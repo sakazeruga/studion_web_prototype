@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <title>新規登録 | スタディオン</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="assets/image/favicon.ico">
+    <link rel="apple-touch-icon" href="assets/image/apple-touch-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=RocknRoll+One&display=swap"
+        rel="stylesheet">
+    <script>
+        (function (d) {
+            var config = {
+                kitId: 'ttn5kgy',
+                scriptTimeout: 3000,
+                async: true
+            },
+                h = d.documentElement, t = setTimeout(function () { h.className = h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive"; }, config.scriptTimeout), tk = d.createElement("script"), f = false, s = d.getElementsByTagName("script")[0], a; h.className += " wf-loading"; tk.src = 'https://use.typekit.net/' + config.kitId + '.js'; tk.async = true; tk.onload = tk.onreadystatechange = function () { a = this.readyState; if (f || a && a != "complete" && a != "loaded") return; f = true; clearTimeout(t); try { Typekit.load(config) } catch (e) { } }; s.parentNode.insertBefore(tk, s)
+        })(document);
+    </script>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <h1>
+            <a href="index.html">
+                <img class="home_logo" src="assets/image/StudionLogo_large.png" alt="スタディオン Logo">
+            </a>
+        </h1>
+        <a href="#" class="menu-toggle" aria-label="メニュー">
+            <img src="assets/image/dehaze.svg" alt="メニュー">
+        </a>
+    </header>
+
+    <!-- Main -->
+    <main class="page-signup">
+        <section class="login-section">
+            <div class="login-container">
+                <h2>新規登録</h2>
+
+                <div class="login-form-wrapper">
+                    <form class="login-form" action="members.html" method="get">
+                        <div class="form-group">
+                            <label for="new-id">Studion ID</label>
+                            <input type="text" id="new-id" name="id" required placeholder="新しいIDを入力">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="new-password">パスワード</label>
+                            <input type="password" id="new-password" name="password" required placeholder="新しいパスワードを入力">
+                        </div>
+
+                        <div class="login-buttons">
+                            <button type="submit" class="btn-orange">登録して始める</button>
+                            <a href="login.html" class="btn-secondary">戻る</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p class="footer-install">今すぐ無料でインストール！</p>
+
+        <ul class="app-buttons">
+            <li><a href="#" class="app-btn"><img src="assets/image/appStore.png" alt=""></a></li>
+            <li><a href="#" class="app-btn"><img src="assets/image/googlePlay.png" alt=""></a></li>
+        </ul>
+
+        <p class="footer-logo">
+            <img src="assets/image/StudionLogo_large.png" alt="スタディオン">
+        </p>
+
+        <ul class="footer-buttons">
+            <li><a href="contact.html">お問い合わせ</a></li>
+            <li><a href="login.html">メンバーページへ</a></li>
+        </ul>
+
+        <small>&copy; 2026 Studion.</small>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

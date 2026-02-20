@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <title>メンバーズページ | スタディオン</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="assets/image/favicon.ico">
+    <link rel="apple-touch-icon" href="assets/image/apple-touch-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=RocknRoll+One&display=swap"
+        rel="stylesheet">
+    <script>
+        (function (d) {
+            var config = {
+                kitId: 'ttn5kgy',
+                scriptTimeout: 3000,
+                async: true
+            },
+                h = d.documentElement, t = setTimeout(function () { h.className = h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive"; }, config.scriptTimeout), tk = d.createElement("script"), f = false, s = d.getElementsByTagName("script")[0], a; h.className += " wf-loading"; tk.src = 'https://use.typekit.net/' + config.kitId + '.js'; tk.async = true; tk.onload = tk.onreadystatechange = function () { a = this.readyState; if (f || a && a != "complete" && a != "loaded") return; f = true; clearTimeout(t); try { Typekit.load(config) } catch (e) { } }; s.parentNode.insertBefore(tk, s)
+        })(document);
+    </script>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <h1>
+            <a href="index.html">
+                <img class="home_logo" src="assets/image/StudionLogo_large.png" alt="スタディオン Logo">
+            </a>
+        </h1>
+        <a href="#" class="menu-toggle" aria-label="メニュー">
+            <img src="assets/image/dehaze.svg" alt="メニュー">
+        </a>
+    </header>
+
+    <!-- Main -->
+    <main class="page-members">
+        <section class="members-dashboard">
+            <h2>メンバーズページ</h2>
+
+            <div class="dashboard-content">
+                <!-- Activity Area -->
+                <div class="activity-area">
+                    <div class="user-profile card">
+                        <div class="profile-header">
+                            <div class="avatar-wrapper">
+                                <!-- Placeholder for avatar -->
+                                <div class="avatar-placeholder">Avatar</div>
+                            </div>
+                            <div class="profile-info">
+                                <p class="account-name">アカウント名<br><span class="data-val">Guest User</span></p>
+                                <p class="account-id">アカウントID<br><span class="data-val">@guest_123</span></p>
+                                <a href="#" class="btn-orange btn-small">編集する</a>
+                            </div>
+                        </div>
+                        <div class="character-data">
+                            <div class="data-row">
+                                <span class="label">チーム名</span>
+                                <span class="value">未所属</span>
+                            </div>
+                            <div class="data-row">
+                                <span class="label">得意科目</span>
+                                <span class="value">数学</span>
+                            </div>
+                            <div class="data-row">
+                                <span class="label">コメント</span>
+                                <span class="value">よろしくお願いします！</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Object Data Area -->
+                    <div class="object-data card">
+                        <div class="object-achievement">
+                            <!-- Placeholder for chart/graph -->
+                            <div class="chart-placeholder">Achievement</div>
+                        </div>
+                        <div class="stats-grid">
+                            <div class="stat-item">
+                                <span class="label">今週の合計<br>学習時間</span>
+                                <span class="value">12h 30m</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="label">今週の平均<br>学習時間</span>
+                                <span class="value">1h 45m</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="label">今週の獲得<br>ポイント</span>
+                                <span class="value">1,250pt</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="label">今週の<br>学習効率</span>
+                                <span class="value">A+</span>
+                            </div>
+                        </div>
+                        <a href="#" class="btn-orange btn-wide">詳細を見る</a>
+                    </div>
+                </div>
+
+                <!-- Homework List -->
+                <div class="homework-list card">
+                    <h3>宿題管理</h3>
+                    <ul class="list-group">
+                        <li class="list-header">
+                            <span class="col-subject">科目</span>
+                            <span class="col-content">内容</span>
+                            <span class="col-status">期限/状態</span>
+                        </li>
+                        <li>
+                            <span class="col-subject">数学I</span>
+                            <span class="col-content">2次関数 1-1</span>
+                            <span class="col-status status-clear">CLEAR</span>
+                        </li>
+                        <li>
+                            <span class="col-subject">数学I</span>
+                            <span class="col-content">2次関数 1-2</span>
+                            <span class="col-status">2026/03/01</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Community List -->
+                <div class="community-list card">
+                    <h3>コミュニティ</h3>
+                    <ul class="list-group">
+                        <li class="list-header">
+                            <span class="col-name">コミュニティ名</span>
+                            <span class="col-access">アクセス</span>
+                        </li>
+                        <li>
+                            <span class="col-name">スタディオン 公式オプチャ</span>
+                            <span class="col-access"><a href="#" class="line-btn">LINEで開く</a></span>
+                        </li>
+                        <li>
+                            <span class="col-name">スタディオン 数学の会</span>
+                            <span class="col-access"><a href="#" class="line-btn">LINEで開く</a></span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p class="footer-install">今すぐ無料でインストール！</p>
+
+        <ul class="app-buttons">
+            <li><a href="#" class="app-btn"><img src="assets/image/appStore.png" alt=""></a></li>
+            <li><a href="#" class="app-btn"><img src="assets/image/googlePlay.png" alt=""></a></li>
+        </ul>
+
+        <p class="footer-logo">
+            <img src="assets/image/StudionLogo_large.png" alt="スタディオン">
+        </p>
+
+        <ul class="footer-buttons">
+            <li><a href="contact.html">お問い合わせ</a></li>
+            <li><a href="login.html">メンバーページへ</a></li>
+        </ul>
+
+        <small>&copy; 2026 Studion.</small>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
