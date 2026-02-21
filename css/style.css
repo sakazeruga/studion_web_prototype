@@ -145,6 +145,8 @@ h2 {
 .trailer-cta {
     margin: 15px 0 -30px 0;
     text-align: center;
+    z-index: 50;
+    position: relative;
 }
 
 /* Section 共通（余白統一・背景は body の bg.jpg） */
@@ -170,12 +172,11 @@ section {
     margin-left: -10vw;
     padding: 17% 0 26% 0;
     box-sizing: content-box;
-    pointer-events: none;
 }
 
 .pv-area__frame::before {
     content: "";
-    z-index: 999;
+    /* z-index: 999; */
     position: absolute;
     inset: 0;
     background-image: url(../assets/image/PVFrame.png);
@@ -233,6 +234,24 @@ section {
     height: 100%;
     border: 0;
     display: block;
+}
+
+/* PV再生アイコン（中央オーバーレイ） */
+.pv-play-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 64px;
+    height: 64px;
+    opacity: 0.8;
+    cursor: pointer;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.pv-area__video:hover .pv-play-icon {
+    opacity: 1;
 }
 
 /* Features Section: Features タイトル＋図（featuresBG.png） */
@@ -499,24 +518,23 @@ section {
 .trial-play {
     position: relative;
     width: 100%;
-    overflow-x: hidden;
+    overflow: hidden;
+    z-index: 100;
 }
 
 .trial-play__frame {
     position: relative;
-    z-index: 0;
     width: 120vw;
     /* max-width: 563px; */
     left: -5vw;
     margin-left: -10vw;
     padding: 14% 8% 12% 8%;
+    overflow: hidden;
     box-sizing: content-box;
-    pointer-events: none;
 }
 
 .trial-play__frame::before {
     content: "";
-    z-index: 999;
     position: absolute;
     inset: 0;
     background-image: url(../assets/image/DemoPlayFrame.png);
@@ -526,15 +544,26 @@ section {
 }
 
 .trial-play__inner {
-    position: relative;
-    z-index: 1;
     text-align: center;
     /* margin-top: 4vw; */
+    position: relative;
+    z-index: 50;
 }
 
 .trial-play__cta {
     display: inline-block;
     margin: auto 0;
+}
+
+/* Finger icon overlapping bottom-right of CTA */
+.trial-play__finger {
+    position: absolute;
+    top: -7vw;
+    right: 9vw;
+    width: 50vw;
+    height: auto;
+    z-index: 60;
+    pointer-events: none;
 }
 
 /* Footer（背景は body の bg.jpg） */
@@ -617,12 +646,12 @@ footer .footer-buttons a {
     background: linear-gradient(180deg, #FF8533 0%, #FF6600 100%);
     color: #fff;
     font-weight: bold;
-    padding: 14px 24px;
+    padding: 14px 16px;
     border-radius: 10px;
     margin: 0 6px 10px;
     text-decoration: none;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
-    width: 180px;
+    width: 45vw;
 }
 
 footer .footer-buttons a:hover {
@@ -677,93 +706,69 @@ footer small {
 }
 
 /* =========================================
-   New Pages Styles
+   New Pages Styles (Figma準拠)
    ========================================= */
 
-/* Contact Page */
-.page-contact .contact-form-section {
-    padding: 120px 20px 60px;
-    min-height: 80vh;
-}
-
-.contact-container {
-    max-width: 800px;
-    margin: 0 auto;
-    background: rgba(255, 255, 255, 0.9);
-    padding: 40px;
-    border-radius: 20px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.contact-container h2 {
-    text-align: center;
-    margin-bottom: 30px;
-    background: transparent;
-    padding: 0;
-}
-
-.form-group {
-    margin-bottom: 20px;
-}
-
-.form-group label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 8px;
-}
-
-.form-group input[type="text"],
-.form-group input[type="email"],
-.form-group input[type="password"],
-.form-group textarea,
-.form-group select {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-size: 16px;
-}
-
-.radio-group {
-    display: flex;
-    gap: 20px;
-}
-
-.radio-group label {
+/* ---- Figma共通ボタン: #d7541e + 白ボーダー + ドロップシャドウ ---- */
+.btn-figma {
+    display: inline-block;
+    background: #d7541e;
+    color: #fff;
+    font-family: 'Inter', 'Noto Sans JP', sans-serif;
+    font-size: 12px;
     font-weight: normal;
-    cursor: pointer;
-}
-
-.form-submit {
     text-align: center;
-    margin-top: 30px;
+    text-decoration: none;
+    padding: 10px 0;
+    width: 170px;
+    border: 2px solid #fff;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.25), 0px 0px 3px 1px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    line-height: 1.2;
 }
 
-/* Demo Page */
+.btn-figma:hover {
+    opacity: 0.85;
+}
+
+/* ---- Members タイトルバー (Figma: Members Title) ---- */
+.members-title-bar {
+    background: linear-gradient(180deg, #FF6600 0%, #FF8533 100%);
+    color: #fff;
+    text-align: center;
+    padding: 6px 0;
+    font-size: 14px;
+    font-weight: bold;
+    font-family: 'Inter', 'Noto Sans JP', sans-serif;
+    letter-spacing: 0.5px;
+}
+
+/* =========================================
+   Demo Page (Figma 260:36)
+   ========================================= */
 .page-demo .demo-area {
-    padding-top: 100px;
-    min-height: 80vh;
+    padding: 0;
+    min-height: auto;
     text-align: center;
 }
 
 .demo-frame {
-    width: 90%;
-    max-width: 400px;
-    /* iPhone size approx */
-    height: 800px;
+    width: 100%;
+    max-width: 402px;
     margin: 0 auto;
-    border: 12px solid #333;
-    border-radius: 40px;
-    background: #000;
+    background: #e8e8e8;
+    border: 1px solid #000;
+    border-radius: 0;
     position: relative;
     overflow: hidden;
+    aspect-ratio: 402 / 893;
 }
 
 .demo-iframe {
     width: 100%;
     height: 100%;
     border: none;
-    background: #fff;
+    background: #e8e8e8;
 }
 
 .demo-placeholder {
@@ -771,205 +776,364 @@ footer small {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: #fff;
-    font-size: 24px;
+    color: #333;
+    font-size: 20px;
     font-weight: bold;
     pointer-events: none;
+    text-align: center;
 }
 
-/* Login & Signup Pages */
+.demo-placeholder p {
+    margin-bottom: 8px;
+}
+
+/* =========================================
+   Login Page (Figma 260:56)
+   ========================================= */
 .page-login,
 .page-signup {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-top: 80px;
-    /* Header height */
+    min-height: auto;
+    display: block;
+    padding-top: 0;
 }
 
 .login-section {
     width: 100%;
-    padding: 20px;
+    max-width: 402px;
+    margin: 0 auto;
+    padding: 0;
 }
 
 .login-container {
-    max-width: 400px;
+    max-width: 402px;
     margin: 0 auto;
-    background: rgba(255, 255, 255, 0.95);
-    padding: 40px;
-    border-radius: 20px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-    text-align: center;
+    background: #fff;
+    padding: 0;
+    border-radius: 0;
+    box-shadow: none;
+    text-align: left;
 }
 
 .login-container h2 {
     background: transparent;
-    margin-bottom: 30px;
-    font-size: 24px;
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    border-radius: 0;
 }
 
+/* Members Login Area */
+.login-form-wrapper {
+    padding: 40px 36px 40px;
+}
+
+/* Inline form: label左 + input右 (Figma: Studion ID / パスワード) */
+.login-form .form-group {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.login-form .form-group label {
+    display: block;
+    font-family: 'Inter', 'Noto Sans JP', sans-serif;
+    font-size: 20px;
+    font-weight: normal;
+    color: #000;
+    white-space: nowrap;
+    min-width: 100px;
+    margin-bottom: 0;
+    text-align: right;
+}
+
+.login-form .form-group input[type="text"],
+.login-form .form-group input[type="password"] {
+    flex: 1;
+    height: 24px;
+    padding: 2px 6px;
+    border: 1px solid #a49090;
+    border-radius: 0;
+    font-size: 14px;
+    background: #fff;
+}
+
+/* Login Buttons: 中央に並べる (Figma: ログイン / 新規登録) */
 .login-buttons {
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 15px;
     margin-top: 30px;
 }
 
+.login-buttons .btn-orange,
+.login-buttons .btn-figma {
+    width: 170px;
+    display: block;
+    text-align: center;
+}
+
 .btn-secondary {
     display: inline-block;
-    background: #fff;
-    color: #666;
-    font-weight: bold;
+    background: #d7541e;
+    color: #fff;
+    font-family: 'Inter', 'Noto Sans JP', sans-serif;
+    font-size: 12px;
+    font-weight: normal;
     text-align: center;
-    padding: 12px 24px;
-    border-radius: 10px;
+    padding: 10px 0;
+    width: 170px;
+    border: 2px solid #fff;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.25), 0px 0px 3px 1px rgba(0, 0, 0, 0.5);
     text-decoration: none;
-    border: 2px solid #ccc;
     cursor: pointer;
+    border-radius: 0;
 }
 
 .btn-secondary:hover {
-    background: #f0f0f0;
+    opacity: 0.85;
 }
 
-/* Members Page */
+/* =========================================
+   Members Page (Figma 260:71)
+   ========================================= */
 .page-members {
-    padding-top: 100px;
-    padding-bottom: 60px;
+    padding-top: 0;
+    padding-bottom: 0;
 }
 
 .members-dashboard {
-    max-width: 1000px;
+    max-width: 402px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0;
+}
+
+.members-dashboard>h2 {
+    display: none;
+    /* タイトルバーで代替 */
 }
 
 .dashboard-content {
-    display: grid;
-    gap: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+    padding: 0 5px;
 }
 
+/* Card: Figma Outer Border = 1px solid #000の枠 */
 .card {
     background: #fff;
-    border-radius: 16px;
-    padding: 24px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    border: 1px solid #000;
+    border-radius: 0;
+    padding: 14px 22px;
+    box-shadow: none;
+    position: relative;
+}
+
+/* ---- User Profile (Main Data) Figma 264:465 ---- */
+.user-profile.card {
+    padding: 15px 13px;
 }
 
 .activity-area {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
 }
 
-@media (max-width: 768px) {
-    .activity-area {
-        grid-template-columns: 1fr;
-    }
-}
-
-/* User Profile */
+/* Profile Header: アカウント名 + ID */
 .profile-header {
     display: flex;
-    align-items: center;
-    gap: 20px;
-    margin-bottom: 20px;
-    border-bottom: 1px solid #eee;
-    padding-bottom: 20px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 6px;
+    margin-bottom: 10px;
+    border-bottom: none;
+    padding-bottom: 0;
 }
 
-.avatar-placeholder {
-    width: 80px;
-    height: 80px;
-    background: #ddd;
-    border-radius: 50%;
+.avatar-wrapper {
+    display: none;
+    /* Figma: Avatar not in header top area for the default layout */
+}
+
+.profile-info {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 12px;
-    color: #666;
+    flex-direction: column;
+    gap: 6px;
 }
 
 .profile-info p {
-    margin-bottom: 4px;
-    font-size: 12px;
-    color: #888;
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    margin-bottom: 0;
+    font-size: 14px;
+    color: #000;
 }
 
-.profile-info .data-val {
-    font-size: 16px;
+.profile-info p .data-val {
+    font-size: 14px;
     font-weight: bold;
-    color: #333;
+    color: #000;
+}
+
+.profile-info .account-name,
+.profile-info .account-id {
+    font-size: 14px;
+    font-weight: normal;
+    font-weight: bold;
+}
+
+.profile-info .account-name br,
+.profile-info .account-id br {
+    display: none;
+    /* brを消してインライン表示に */
+}
+
+/* Character Data: Avatar + データを横並び */
+.character-data {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin-top: 10px;
 }
 
 .character-data .data-row {
     display: flex;
-    justify-content: space-between;
-    margin-bottom: 12px;
-    border-bottom: 1px dotted #eee;
-    padding-bottom: 4px;
+    gap: 5px;
+    margin-bottom: 5px;
+    border-bottom: none;
+    padding-bottom: 0;
+    font-size: 13px;
+    font-weight: bold;
 }
 
-.btn-small {
-    padding: 8px 16px;
-    font-size: 12px;
+.character-data .data-row .label {
+    min-width: 65px;
+    color: #000;
+    font-size: 13px;
 }
 
-/* Object Data */
-.chart-placeholder {
-    width: 100%;
-    height: 150px;
-    background: #f5f5f5;
-    border-radius: 8px;
+.character-data .data-row .value {
+    color: #000;
+    font-size: 13px;
+}
+
+.avatar-placeholder {
+    width: 114px;
+    height: 114px;
+    min-width: 114px;
+    background: #ddd;
+    border-radius: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 20px;
-    color: #aaa;
+    font-size: 12px;
+    color: #666;
 }
 
-.stats-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-    margin-bottom: 20px;
-}
-
-.stat-item {
-    background: #f9f9f9;
-    padding: 12px;
-    border-radius: 8px;
+/* 編集するボタン位置 */
+.user-profile .btn-orange.btn-small,
+.user-profile .btn-figma {
+    display: block;
+    margin-left: auto;
+    margin-top: 10px;
+    width: 170px;
     text-align: center;
 }
 
-.stat-item .label {
-    display: block;
+.btn-small {
+    padding: 10px 0;
+    font-size: 12px;
+    width: 170px;
+}
+
+/* ---- Object Data Area (Figma 269:139) ---- */
+.object-data.card {
+    padding: 14px 16px;
+}
+
+.chart-placeholder {
+    width: 108px;
+    height: 106px;
+    min-width: 108px;
+    background: #f5f5f5;
+    border-radius: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0;
+    color: #aaa;
     font-size: 11px;
-    color: #888;
-    margin-bottom: 4px;
+}
+
+.object-data-inner {
+    display: flex;
+    align-items: flex-start;
+    gap: 13px;
+}
+
+.stats-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 0;
+    flex: 1;
+}
+
+.stat-item {
+    display: flex;
+    align-items: baseline;
+    gap: 9px;
+    background: transparent;
+    padding: 0;
+    border-radius: 0;
+    text-align: left;
+}
+
+.stat-item .label {
+    display: inline;
+    font-size: 13px;
+    color: #000;
+    margin-bottom: 0;
+    min-width: 80px;
 }
 
 .stat-item .value {
-    font-size: 16px;
-    font-weight: bold;
-    color: #333;
+    font-size: 13px;
+    font-weight: normal;
+    color: #000;
+}
+
+/* 詳細を見るボタン位置 */
+.object-data .btn-orange.btn-wide,
+.object-data .btn-figma {
+    display: block;
+    margin-left: auto;
+    margin-top: 14px;
+    width: 170px;
+    text-align: center;
 }
 
 .btn-wide {
-    width: 100%;
+    width: 170px;
     display: block;
     box-sizing: border-box;
 }
 
-/* Lists */
+/* ---- Lists: 宿題管理 / コミュニティ (Figma 273:419 / 273:465) ---- */
 .card h3 {
     background: transparent;
     padding: 0;
-    margin-bottom: 16px;
-    font-size: 18px;
-    border-bottom: 2px solid #eee;
-    padding-bottom: 8px;
+    margin-bottom: 8px;
+    font-size: 16px;
+    border-bottom: none;
+    padding-bottom: 0;
+    font-weight: bold;
+    color: #000;
+    border-radius: 0;
 }
 
 .list-group {
@@ -979,28 +1143,37 @@ footer small {
 .list-group li {
     display: flex;
     align-items: center;
-    padding: 12px 0;
-    border-bottom: 1px solid #eee;
+    padding: 4px 0;
+    border-bottom: 1px solid #ddd;
+    font-size: 13px;
+}
+
+.list-group li:last-child {
+    border-bottom: none;
 }
 
 .list-group .list-header {
     font-weight: bold;
-    background: #f5f5f5;
-    padding: 8px 12px;
-    border-radius: 4px;
+    background: transparent;
+    padding: 4px 0;
+    border-radius: 0;
+    border-bottom: 2px solid #000;
+    font-size: 13px;
 }
 
 .col-subject {
-    width: 30%;
+    width: 25%;
 }
 
 .col-content {
-    width: 40%;
+    width: 44%;
 }
 
 .col-status {
-    width: 30%;
+    width: 31%;
     text-align: right;
+    color: red;
+    font-weight: bold;
 }
 
 .status-clear {
@@ -1009,34 +1182,209 @@ footer small {
 }
 
 .col-name {
-    width: 70%;
+    width: 66%;
 }
 
 .col-access {
-    width: 30%;
+    width: 34%;
     text-align: right;
 }
 
 .line-btn {
     background: #06C755;
     color: #fff;
-    font-size: 12px;
-    padding: 6px 12px;
-    border-radius: 4px;
+    font-size: 11px;
+    padding: 3px 10px;
+    border-radius: 3px;
     text-decoration: none;
+    display: inline-block;
 }
 
-/* Menu Overlay */
+/* =========================================
+   Contact Page (Figma 273:526 - Google Form風)
+   ========================================= */
+.page-contact {
+    background: #f0ebf8;
+}
+
+.page-contact .contact-form-section {
+    padding: 0;
+    min-height: auto;
+}
+
+.contact-container {
+    max-width: 402px;
+    margin: 0 auto;
+    background: transparent;
+    padding: 0;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+/* Contact ヘッダーバナー */
+.contact-header-banner {
+    background: #d9d9d9;
+    padding: 30px 20px 14px;
+    text-align: center;
+    border-top: 6px solid #673ab7;
+    border-radius: 8px 8px 0 0;
+    margin-bottom: 20px;
+}
+
+.contact-header-banner h2 {
+    background: transparent;
+    padding: 0;
+    margin: 0;
+    font-size: 12px;
+    font-weight: normal;
+    color: #000;
+    border-radius: 0;
+}
+
+.contact-container>h2 {
+    display: none;
+}
+
+/* フォームカード */
+.contact-form-card {
+    background: #fff;
+    border: 1px solid #dadce0;
+    border-radius: 8px;
+    border-top: none;
+    padding: 24px 20px;
+    margin-bottom: 12px;
+}
+
+.contact-form-card:first-of-type {
+    border-top: 1px solid #dadce0;
+}
+
+.contact-required-note {
+    color: #d93025;
+    font-size: 12px;
+    margin-bottom: 16px;
+}
+
+/* Form groups: Google Formスタイル */
+.form-group {
+    margin-bottom: 0;
+}
+
+.form-group label {
+    display: block;
+    font-weight: normal;
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #000;
+}
+
+.form-group label .required {
+    color: #d93025;
+    margin-left: 4px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"],
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 8px 0;
+    border: none;
+    border-bottom: 1px solid #000;
+    border-radius: 0;
+    font-size: 14px;
+    background: transparent;
+    outline: none;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group input[type="password"]:focus,
+.form-group textarea:focus {
+    border-bottom: 2px solid #673ab7;
+}
+
+.form-group textarea {
+    border: 1px solid #000;
+    border-radius: 0;
+    padding: 8px;
+    resize: vertical;
+}
+
+.radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.radio-group label {
+    font-weight: normal;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    padding: 6px 0;
+    margin-bottom: 0;
+}
+
+.radio-group input[type="radio"] {
+    width: 18px;
+    height: 18px;
+    accent-color: #673ab7;
+}
+
+/* 送信ボタン: Google Form風 */
+.form-submit {
+    text-align: left;
+    margin-top: 20px;
+}
+
+.form-submit .btn-orange {
+    background: #673ab7;
+    color: #fff;
+    border: none;
+    padding: 10px 24px;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 4px;
+    box-shadow: none;
+    cursor: pointer;
+}
+
+.form-submit .btn-orange:hover {
+    background: #5e35b1;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* =========================================
+   Signup Page (Figma 273:559 - Register)
+   ========================================= */
+.page-signup .login-container h2 {
+    display: none;
+}
+
+.page-signup .login-form-wrapper {
+    padding: 40px 24px 40px;
+}
+
+.page-signup .login-buttons {
+    margin-top: 20px;
+}
+
+/* =========================================
+   Menu Overlay (Figma 297:125)
+   ========================================= */
 .menu-overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.5);
     z-index: 9999;
     display: none;
-    /* Hidden by default */
     align-items: center;
     justify-content: center;
 }
@@ -1047,42 +1395,176 @@ footer small {
 
 .menu-content {
     background: #fff;
-    width: 90%;
-    max-width: 400px;
-    padding: 40px;
-    border-radius: 20px;
+    width: 210px;
+    padding: 15px 20px;
+    border-radius: 0;
     text-align: center;
     position: relative;
 }
 
 .menu-close {
     position: absolute;
-    top: 15px;
-    right: 15px;
-    font-size: 24px;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
     background: none;
     border: none;
     cursor: pointer;
+}
+
+.menu-logo {
+    width: 178px;
+    height: auto;
+    margin-bottom: 15px;
 }
 
 .menu-list {
     list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 15px;
 }
 
 .menu-list li a {
     display: block;
-    font-size: 18px;
+    background: #d7541e;
+    color: #fff;
+    font-family: 'Inter', 'Noto Sans JP', sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+    text-align: center;
     text-decoration: none;
-    color: #333;
-    font-weight: bold;
-    padding: 10px;
-    border-bottom: 1px solid #eee;
+    padding: 10px 0;
+    width: 170px;
+    border: 2px solid #fff;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.25), 0px 0px 3px 1px rgba(0, 0, 0, 0.5);
+    margin: 0 auto;
 }
 
-.menu-logo {
-    width: 150px;
-    margin-bottom: 30px;
+.menu-list li a:hover {
+    opacity: 0.85;
+}
+
+/* Required star */
+.required {
+    color: #d93025;
+}
+
+/* =========================================
+   Popup Overlay & Panels
+   ========================================= */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 10000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.popup-overlay.active {
+    display: flex;
+}
+
+.popup-panel {
+    background: #fff;
+    border: 1px solid #000;
+    max-width: 380px;
+    width: 90%;
+    padding: 14px 25px;
+    position: relative;
+}
+
+/* ---- Edit Profile Popup (Figma 273:373) ---- */
+.popup-edit-panel {
+    padding: 14px 25px 20px;
+}
+
+.popup-edit-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.popup-form-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.popup-form-row label {
+    font-family: 'Inter', 'Noto Sans JP', sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    color: #000;
+    min-width: 80px;
+    text-align: right;
+    white-space: nowrap;
+    margin-bottom: 0;
+}
+
+.popup-form-row input[type="text"] {
+    flex: 1;
+    height: 24px;
+    padding: 2px 6px;
+    border: 1px solid #a49090;
+    border-radius: 0;
+    font-size: 14px;
+    background: #fff;
+}
+
+.popup-form-row--textarea {
+    align-items: flex-start;
+}
+
+.popup-form-row textarea {
+    flex: 1;
+    padding: 6px;
+    border: 1px solid #a49090;
+    border-radius: 0;
+    font-size: 14px;
+    background: #fff;
+    resize: vertical;
+    font-family: 'Inter', 'Noto Sans JP', sans-serif;
+}
+
+.popup-close-btn {
+    display: block;
+    margin: 16px 0 0 auto;
+}
+
+/* ---- Detail Popup (Figma 273:362) ---- */
+.popup-detail-panel {
+    padding: 14px 25px 20px;
+    max-width: 400px;
+}
+
+.popup-chart-section {
+    margin-bottom: 16px;
+}
+
+.popup-chart-title {
+    font-family: 'Inter', 'Noto Sans JP', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    color: #000;
+    margin-bottom: 8px;
+    border-bottom: none;
+    padding: 0;
+    background: transparent;
+}
+
+.popup-chart-img {
+    width: 100%;
+    border: 1px solid #eee;
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+.popup-chart-img svg {
+    display: block;
 }

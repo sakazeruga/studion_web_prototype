@@ -67,6 +67,7 @@
                         </div>
                         <div class="pv-area__video">
                             <iframe src="" frameborder="0" allowfullscreen title="PV動画"></iframe>
+                            <img src="assets/image/play_circle.svg" alt="再生" class="pv-play-icon">
                         </div>
                     </div>
                 </div>
@@ -75,7 +76,7 @@
             <!-- CTA: 無料プレイはこちら！（Figma: PVの次） -->
             <div class="trailer">
                 <p class="trailer-cta">
-                    <a href="demo.html" class="btn-orange">無料プレイはこちら！</a>
+                    <a href="#trial-play" class="btn-orange">無料プレイはこちら！</a>
                 </p>
             </div>
         </section>
@@ -160,13 +161,16 @@
         </section>
 
         <!-- Trial Play Section: 体験版をプレイ（Footer の前・PVFrame パターン） -->
-        <section class="trial-play">
+        <div class="trial-play">
             <div class="trial-play__frame" aria-hidden="true">
                 <div class="trial-play__inner">
-                    <a href="demo.html" class="btn-orange trial-play__cta">体験版をプレイ</a>
+                    <a id="trial-play" href="demo.html" class="btn-orange trial-play__cta">体験版をプレイ</a>
+                    <figure>
+                        <img src="assets/image/finger.png" alt="" class="trial-play__finger">
+                    </figure>
                 </div>
             </div>
-        </section>
+        </div>
     </main>
 
     <!-- Footer -->
@@ -183,7 +187,7 @@
         </p>
 
         <ul class="footer-buttons">
-            <li><a href="contact.html">お問い合わせ</a></li>
+            <li><a href="https://forms.gle/XX3NvUSGwizPQ99k9" target="_blank">お問い合わせ</a></li>
             <li><a href="login.html">メンバーページ</a></li>
         </ul>
 

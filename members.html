@@ -41,65 +41,78 @@
 
     <!-- Main -->
     <main class="page-members">
-        <section class="members-dashboard">
-            <h2>メンバーズページ</h2>
+        <!-- Members Title Bar -->
+        <div class="members-title-bar">Members</div>
 
+        <section class="members-dashboard">
             <div class="dashboard-content">
                 <!-- Activity Area -->
                 <div class="activity-area">
+                    <!-- Main Data (User Profile Card) -->
                     <div class="user-profile card">
+                        <!-- Account Data -->
                         <div class="profile-header">
-                            <div class="avatar-wrapper">
-                                <!-- Placeholder for avatar -->
-                                <div class="avatar-placeholder">Avatar</div>
-                            </div>
                             <div class="profile-info">
-                                <p class="account-name">アカウント名<br><span class="data-val">Guest User</span></p>
-                                <p class="account-id">アカウントID<br><span class="data-val">@guest_123</span></p>
-                                <a href="#" class="btn-orange btn-small">編集する</a>
+                                <p class="account-name">アカウント名 <span class="data-val">サカゼルガ</span></p>
+                                <p class="account-id">アカウントID <span class="data-val">114514</span></p>
                             </div>
                         </div>
+                        <!-- Character Data: Avatar + Info -->
                         <div class="character-data">
-                            <div class="data-row">
-                                <span class="label">チーム名</span>
-                                <span class="value">未所属</span>
+                            <div class="avatar-placeholder">
+                                <img src="assets/image/Avater.png" alt="キャラクター">
                             </div>
-                            <div class="data-row">
-                                <span class="label">得意科目</span>
-                                <span class="value">数学</span>
-                            </div>
-                            <div class="data-row">
-                                <span class="label">コメント</span>
-                                <span class="value">よろしくお願いします！</span>
+                            <div class="character-info">
+                                <div class="data-row">
+                                    <span class="label">
+                                        <img src="assets/image/character_title.png" alt="キャラクタータイトル">
+                                    </span>
+                                </div>
+                                <div class="data-row">
+                                    <span class="label">チーム名</span>
+                                    <span class="value">草不可避</span>
+                                </div>
+                                <div class="data-row">
+                                    <span class="label">得意科目</span>
+                                    <span class="value">物理</span>
+                                </div>
+                                <div class="data-row">
+                                    <span class="label">コメント</span>
+                                    <span class="value">24歳学生です。よろしくニキ〜</span>
+                                </div>
                             </div>
                         </div>
+                        <a href="#" class="btn-figma btn-small" id="btnEditProfile">編集する</a>
                     </div>
 
                     <!-- Object Data Area -->
                     <div class="object-data card">
-                        <div class="object-achievement">
-                            <!-- Placeholder for chart/graph -->
-                            <div class="chart-placeholder">Achievement</div>
+                        <div class="object-data-inner">
+                            <div class="chart-placeholder">
+                                <div>
+                                    <div><img src="assets/image/Achievement.png" alt="キャラクタータイトル"></div>
+                                </div>
+                            </div>
+                            <div class="stats-grid">
+                                <div class="stat-item">
+                                    <span class="label">今週の合計 学習時間</span>
+                                    <span class="value">14</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="label">今週の平均 学習時間</span>
+                                    <span class="value">2</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="label">今週の獲得 ポイント</span>
+                                    <span class="value">196</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="label">今週の 学習効率</span>
+                                    <span class="value">14</span>
+                                </div>
+                            </div>
                         </div>
-                        <div class="stats-grid">
-                            <div class="stat-item">
-                                <span class="label">今週の合計<br>学習時間</span>
-                                <span class="value">12h 30m</span>
-                            </div>
-                            <div class="stat-item">
-                                <span class="label">今週の平均<br>学習時間</span>
-                                <span class="value">1h 45m</span>
-                            </div>
-                            <div class="stat-item">
-                                <span class="label">今週の獲得<br>ポイント</span>
-                                <span class="value">1,250pt</span>
-                            </div>
-                            <div class="stat-item">
-                                <span class="label">今週の<br>学習効率</span>
-                                <span class="value">A+</span>
-                            </div>
-                        </div>
-                        <a href="#" class="btn-orange btn-wide">詳細を見る</a>
+                        <a href="#" class="btn-figma btn-wide" id="btnViewDetail">詳細を見る</a>
                     </div>
                 </div>
 
@@ -110,17 +123,17 @@
                         <li class="list-header">
                             <span class="col-subject">科目</span>
                             <span class="col-content">内容</span>
-                            <span class="col-status">期限/状態</span>
+                            <span class="col-status">期限</span>
                         </li>
                         <li>
-                            <span class="col-subject">数学I</span>
-                            <span class="col-content">2次関数 1-1</span>
+                            <span class="col-subject">数学１</span>
+                            <span class="col-content">２次関数１－１</span>
+                            <span class="col-status">2026/01/12</span>
+                        </li>
+                        <li>
+                            <span class="col-subject">数学１</span>
+                            <span class="col-content">２次関数１－１</span>
                             <span class="col-status status-clear">CLEAR</span>
-                        </li>
-                        <li>
-                            <span class="col-subject">数学I</span>
-                            <span class="col-content">2次関数 1-2</span>
-                            <span class="col-status">2026/03/01</span>
                         </li>
                     </ul>
                 </div>
@@ -147,6 +160,106 @@
         </section>
     </main>
 
+    <!-- ===================== -->
+    <!-- Popup: 編集する (Figma 273:373) -->
+    <!-- ===================== -->
+    <div class="popup-overlay" id="popupEdit">
+        <div class="popup-panel popup-edit-panel">
+            <div class="popup-edit-form">
+                <div class="popup-form-row">
+                    <label for="edit-subject">得意科目</label>
+                    <input type="text" id="edit-subject" value="物理">
+                </div>
+                <div class="popup-form-row popup-form-row--textarea">
+                    <label for="edit-comment">コメント</label>
+                    <textarea id="edit-comment" rows="4">24歳学生です。よろしくニキ〜</textarea>
+                </div>
+            </div>
+            <button class="btn-figma popup-close-btn" id="btnCloseEdit">編集を終了</button>
+        </div>
+    </div>
+
+    <!-- ===================== -->
+    <!-- Popup: 詳細を見る (Figma 273:362) -->
+    <!-- ===================== -->
+    <div class="popup-overlay" id="popupDetail">
+        <div class="popup-panel popup-detail-panel">
+            <div class="popup-chart-section">
+                <h3 class="popup-chart-title">週間学習時間</h3>
+                <div class="popup-chart-img">
+                    <svg viewBox="0 0 300 140" width="100%">
+                        <!-- Y axis labels -->
+                        <text x="20" y="15" font-size="10" fill="#666">80</text>
+                        <text x="20" y="45" font-size="10" fill="#666">60</text>
+                        <text x="20" y="75" font-size="10" fill="#666">40</text>
+                        <text x="20" y="105" font-size="10" fill="#666">20</text>
+                        <text x="20" y="130" font-size="10" fill="#666">0</text>
+                        <!-- Grid lines -->
+                        <line x1="40" y1="10" x2="280" y2="10" stroke="#eee" stroke-width="1" />
+                        <line x1="40" y1="40" x2="280" y2="40" stroke="#eee" stroke-width="1" />
+                        <line x1="40" y1="70" x2="280" y2="70" stroke="#eee" stroke-width="1" />
+                        <line x1="40" y1="100" x2="280" y2="100" stroke="#eee" stroke-width="1" />
+                        <line x1="40" y1="130" x2="280" y2="130" stroke="#ddd" stroke-width="1" />
+                        <!-- Area -->
+                        <polygon points="60,118 100,90 140,105 180,80 220,95 260,50 260,130 60,130"
+                            fill="rgba(66,133,244,0.15)" />
+                        <!-- Line -->
+                        <polyline points="60,118 100,90 140,105 180,80 220,95 260,50" fill="none" stroke="#4285f4"
+                            stroke-width="2" />
+                        <!-- Dots -->
+                        <circle cx="60" cy="118" r="3" fill="#4285f4" />
+                        <circle cx="100" cy="90" r="3" fill="#4285f4" />
+                        <circle cx="140" cy="105" r="3" fill="#4285f4" />
+                        <circle cx="180" cy="80" r="3" fill="#4285f4" />
+                        <circle cx="220" cy="95" r="3" fill="#4285f4" />
+                        <circle cx="260" cy="50" r="3" fill="#4285f4" />
+                        <!-- X axis labels -->
+                        <text x="55" y="143" font-size="10" fill="#666">2月</text>
+                        <text x="95" y="143" font-size="10" fill="#666">3月</text>
+                        <text x="135" y="143" font-size="10" fill="#666">4月</text>
+                        <text x="175" y="143" font-size="10" fill="#666">5月</text>
+                        <text x="215" y="143" font-size="10" fill="#666">6月</text>
+                        <text x="255" y="143" font-size="10" fill="#666">7月</text>
+                    </svg>
+                </div>
+            </div>
+            <div class="popup-chart-section">
+                <h3 class="popup-chart-title">科目別進捗</h3>
+                <div class="popup-chart-img">
+                    <svg viewBox="0 0 300 170" width="100%">
+                        <!-- Y axis labels -->
+                        <text x="15" y="15" font-size="10" fill="#666">100</text>
+                        <text x="20" y="45" font-size="10" fill="#666">80</text>
+                        <text x="20" y="75" font-size="10" fill="#666">60</text>
+                        <text x="20" y="105" font-size="10" fill="#666">40</text>
+                        <text x="20" y="130" font-size="10" fill="#666">20</text>
+                        <!-- Grid lines -->
+                        <line x1="40" y1="10" x2="280" y2="10" stroke="#eee" stroke-width="1" />
+                        <line x1="40" y1="40" x2="280" y2="40" stroke="#eee" stroke-width="1" />
+                        <line x1="40" y1="70" x2="280" y2="70" stroke="#eee" stroke-width="1" />
+                        <line x1="40" y1="100" x2="280" y2="100" stroke="#eee" stroke-width="1" />
+                        <line x1="40" y1="130" x2="280" y2="130" stroke="#ddd" stroke-width="1" />
+                        <!-- Bars -->
+                        <rect x="52" y="80" width="22" height="50" fill="#4285f4" rx="2" />
+                        <rect x="88" y="50" width="22" height="80" fill="#4285f4" rx="2" />
+                        <rect x="124" y="85" width="22" height="45" fill="#34a853" rx="2" />
+                        <rect x="160" y="35" width="22" height="95" fill="#34a853" rx="2" />
+                        <rect x="196" y="55" width="22" height="75" fill="#ea4335" rx="2" />
+                        <rect x="232" y="20" width="22" height="110" fill="#a142f4" rx="2" />
+                        <!-- X axis labels -->
+                        <text x="52" y="150" font-size="10" fill="#666">国語</text>
+                        <text x="88" y="150" font-size="10" fill="#666">数学</text>
+                        <text x="124" y="150" font-size="10" fill="#666">英語</text>
+                        <text x="160" y="150" font-size="10" fill="#666">物理</text>
+                        <text x="196" y="150" font-size="10" fill="#666">化学</text>
+                        <text x="232" y="150" font-size="10" fill="#666">地理</text>
+                    </svg>
+                </div>
+            </div>
+            <button class="btn-figma popup-close-btn" id="btnCloseDetail">閉じる</button>
+        </div>
+    </div>
+
     <!-- Footer -->
     <footer>
         <p class="footer-install">今すぐ無料でインストール！</p>
@@ -161,8 +274,8 @@
         </p>
 
         <ul class="footer-buttons">
-            <li><a href="contact.html">お問い合わせ</a></li>
-            <li><a href="login.html">メンバーページへ</a></li>
+            <li><a href="https://forms.gle/XX3NvUSGwizPQ99k9" target="_blank">お問い合わせ</a></li>
+            <li><a href="login.html">メンバーズページ</a></li>
         </ul>
 
         <small>&copy; 2026 Studion.</small>

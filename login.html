@@ -41,25 +41,30 @@
 
     <!-- Main -->
     <main class="page-login">
+        <!-- Members Title Bar -->
+        <div class="members-title-bar">Members</div>
+
         <section class="login-section">
             <div class="login-container">
-                <h2>メンバーズページ</h2>
-
                 <div class="login-form-wrapper">
-                    <form class="login-form" action="members.html" method="get">
+                    <form class="login-form" id="loginForm">
                         <div class="form-group">
                             <label for="studion-id">Studion ID</label>
-                            <input type="text" id="studion-id" name="id" required placeholder="IDを入力">
+                            <input type="text" id="studion-id" name="id" value="guest" required>
                         </div>
 
                         <div class="form-group">
                             <label for="password">パスワード</label>
-                            <input type="password" id="password" name="password" required placeholder="パスワードを入力">
+                            <input type="password" id="password" name="password" value="1111" required>
                         </div>
 
+                        <p class="login-error" id="loginError"
+                            style="display:none; color:#d93025; font-size:12px; text-align:center; margin-top:10px;">
+                            IDまたはパスワードが間違っています。</p>
+
                         <div class="login-buttons">
-                            <button type="submit" class="btn-orange">ログイン</button>
-                            <a href="signup.html" class="btn-secondary">新規登録</a>
+                            <button type="submit" class="btn-figma">ログイン</button>
+                            <a href="signup.html" class="btn-figma">新規登録</a>
                         </div>
                     </form>
                 </div>
@@ -81,8 +86,8 @@
         </p>
 
         <ul class="footer-buttons">
-            <li><a href="contact.html">お問い合わせ</a></li>
-            <li><a href="login.html">メンバーページへ</a></li>
+            <li><a href="https://forms.gle/XX3NvUSGwizPQ99k9" target="_blank">お問い合わせ</a></li>
+            <li><a href="login.html">メンバーズページ</a></li>
         </ul>
 
         <small>&copy; 2026 Studion.</small>
