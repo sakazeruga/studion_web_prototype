@@ -669,14 +669,13 @@ footer small {
     border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-/* Responsive: モバイルファースト維持（pxベース） */
-@media {
-    .trailer {}
+/* PC用ナビ: モバイルではデフォルト非表示 */
+.pc-nav {
+    display: none;
+}
 
-    .features ol>li h3 {
-
-        /* モバイルでも大きめに表示 */
-    }
+/* Responsive: モバイル専用 */
+@media (max-width: 767px) {
 
     /* Feature05 キャラをモバイルでBG上に上下2段配置 */
     .feature05-visual {
@@ -1569,4 +1568,366 @@ footer small {
 
 .popup-chart-img svg {
     display: block;
+}
+
+/* =========================================
+   Responsive: PC / Tablet (min-width: 768px)
+   ========================================= */
+@media (min-width: 768px) {
+
+    /* ---- 共通: ルート変数のスペース調整 ---- */
+    :root {
+        --space-section-y: 64px;
+        --space-section-x: 40px;
+    }
+
+    /* ---- Header: ロゴ大きめ、メニューボタン非表示、ナビ表示 ---- */
+    header {
+        padding: 0 40px;
+        height: 64px;
+    }
+
+    .home_logo {
+        max-width: 220px;
+    }
+
+    /* ハンバーガーメニューボタンを非表示 */
+    header .menu-toggle {
+        display: none;
+    }
+
+    /* PC用ナビゲーションを表示 */
+    .pc-nav {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+        list-style: none;
+    }
+
+    .pc-nav a {
+        text-decoration: none;
+        color: #333;
+        font-size: 14px;
+        font-family: 'Inter', 'Noto Sans JP', sans-serif;
+        white-space: nowrap;
+        transition: color 0.2s;
+    }
+
+    .pc-nav a:hover {
+        color: #FF6600;
+    }
+
+    .pc-nav .btn-figma {
+        font-size: 13px;
+        padding: 8px 0;
+        width: 130px;
+    }
+
+    /* ---- Eyecatch ---- */
+    .eyecatch .eyecatch-title img {
+        max-height: 480px;
+        object-fit: cover;
+        object-position: center top;
+        width: 100%;
+    }
+
+    /* ---- PV Area ---- */
+    .pv-area {
+        margin: -6vw 0 0 0;
+    }
+
+    .pv-area__frame {
+        width: 100%;
+        margin-left: 0;
+        padding: 8% 0 14% 0;
+    }
+
+    .pv-area__video {
+        width: 70%;
+        max-width: 720px;
+    }
+
+    .pv-area__watch .watch_pv {
+        font-size: clamp(24px, 3vw, 48px);
+        padding: 16px 0 8px;
+    }
+
+    /* ---- Trailer CTA ---- */
+    .btn-orange {
+        padding: 14px 40px;
+        font-size: 16px;
+    }
+
+    /* ---- Features Section ---- */
+    .features>h2 {
+        padding: 80px 40px 40px;
+    }
+
+    .features-title-text {
+        font-size: clamp(40px, 6vw, 80px);
+    }
+
+    .features ol {
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+    .features ol>li h3 {
+        font-size: clamp(24px, 4vw, 52px);
+    }
+
+    .emphasis-large {
+        font-size: clamp(28px, 5vw, 60px);
+    }
+
+    .emphasis-slarge {
+        font-size: clamp(36px, 7vw, 80px);
+    }
+
+    .features ol>li h3 img {
+        height: clamp(80px, 12vw, 140px);
+    }
+
+    .feature-content {
+        height: clamp(80px, 12vw, 140px);
+    }
+
+    /* Feature 1 */
+    .feature-01-title {
+        margin-top: clamp(60px, 10vw, 120px);
+    }
+
+    /* Feature 4 */
+    .feature-04-title {
+        margin-top: clamp(-320px, -35vw, -200px);
+    }
+
+    /* Feature 5 */
+    .feature-05-content {
+        top: clamp(-560px, -55vw, -400px);
+        height: clamp(100px, 15vw, 160px);
+    }
+
+    .features ol>li.feature-05 {
+        margin-bottom: clamp(-300px, -40vw, -200px);
+    }
+
+    /* ---- Trial Play ---- */
+    .trial-play__frame {
+        width: 80%;
+        max-width: 700px;
+        left: 50%;
+        transform: translateX(-50%);
+        margin-left: 0;
+        padding: 10% 8% 10% 8%;
+    }
+
+    .trial-play__finger {
+        top: -60px;
+        right: 80px;
+        width: 200px;
+    }
+
+    /* ---- Footer ---- */
+    footer .footer-install {
+        font-size: clamp(24px, 4vw, 48px);
+        padding: 20px 16px;
+        margin-top: 20px;
+    }
+
+    footer .footer-buttons a {
+        width: 200px;
+        font-size: 14px;
+    }
+
+    footer .footer-logo img {
+        max-width: 300px;
+        width: 40vw;
+    }
+
+    /* ---- Login / Signup ---- */
+    .login-section,
+    .login-container {
+        max-width: 520px;
+    }
+
+    .login-form-wrapper {
+        padding: 48px 48px 48px;
+    }
+
+    .login-form .form-group label {
+        font-size: 16px;
+        min-width: 120px;
+    }
+
+    .login-buttons .btn-orange,
+    .login-buttons .btn-figma,
+    .btn-secondary {
+        width: 200px;
+        font-size: 14px;
+        padding: 12px 0;
+    }
+
+    /* ---- Demo Page ---- */
+    .page-demo .demo-area {
+        display: flex;
+        justify-content: center;
+        padding: 32px 0;
+    }
+
+    .demo-frame {
+        max-width: 402px;
+        width: 40vw;
+        min-width: 300px;
+    }
+
+    /* ---- Members Dashboard: 2カラムレイアウト ---- */
+    .members-dashboard {
+        max-width: 960px;
+        padding: 0 20px;
+    }
+
+    .dashboard-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        padding: 0;
+        align-items: start;
+    }
+
+    /* 左カラム: user-profile + object-data */
+    .activity-area {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        grid-column: 1;
+    }
+
+    /* 右カラム: homework + community */
+    .homework-list {
+        grid-column: 2;
+        grid-row: 1;
+    }
+
+    .community-list {
+        grid-column: 2;
+        grid-row: 2;
+    }
+
+    .card {
+        padding: 18px 24px;
+    }
+
+    /* ---- Menu Overlay: PCでは幅を制限 ---- */
+    .menu-content {
+        width: min(400px, 90vw);
+        height: auto;
+        min-height: 60vh;
+        border-radius: 8px;
+        padding: 24px 32px;
+    }
+
+    .menu-close {
+        top: -8px;
+        right: 8px;
+        font-size: 48px;
+    }
+
+    .menu-logo {
+        max-width: 200px;
+        margin: 16px auto;
+    }
+
+    .menu-list li a {
+        font-size: 16px;
+        padding: 12px;
+        width: 280px;
+        height: auto;
+        margin: 4px auto;
+    }
+}
+
+/* =========================================
+   Responsive: PC Wide (min-width: 1024px)
+   ========================================= */
+@media (min-width: 1024px) {
+
+    /* ---- Header ---- */
+    header {
+        padding: 0 80px;
+    }
+
+    .home_logo {
+        max-width: 260px;
+    }
+
+    /* ---- PV Area ---- */
+    .pv-area {
+        margin: -4vw 0 0 0;
+    }
+
+    .pv-area__frame {
+        padding: 6% 0 10% 0;
+    }
+
+    .pv-area__video {
+        width: 60%;
+        max-width: 800px;
+    }
+
+    /* ---- Index: コンテンツ最大幅でセンター ---- */
+    main {
+        max-width: 1280px;
+        margin: 0 auto;
+    }
+
+    /* ---- Features ---- */
+    .features-title-text {
+        font-size: clamp(48px, 5vw, 80px);
+    }
+
+    .features ol>li h3 {
+        font-size: clamp(28px, 3.5vw, 52px);
+    }
+
+    .emphasis-large {
+        font-size: clamp(32px, 4vw, 60px);
+    }
+
+    .emphasis-slarge {
+        font-size: clamp(40px, 6vw, 80px);
+    }
+
+    /* ---- Trial Play ---- */
+    .trial-play__frame {
+        width: 60%;
+        max-width: 700px;
+    }
+
+    .trial-play__finger {
+        right: 100px;
+        width: 180px;
+    }
+
+    /* ---- Footer ---- */
+    footer .footer-install {
+        font-size: 36px;
+    }
+
+    footer .app-buttons {
+        gap: 20px;
+    }
+
+    footer .app-btn {
+        width: 200px;
+    }
+
+    footer small {
+        font-size: 14px;
+    }
+
+    /* ---- Members ---- */
+    .members-dashboard {
+        max-width: 1100px;
+    }
 }
